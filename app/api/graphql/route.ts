@@ -1,20 +1,10 @@
 // Next.js Custom Route Handler: https://nextjs.org/docs/app/building-your-application/routing/router-handlers
-import { createSchema, createYoga } from "graphql-yoga";
+import { createYoga } from "graphql-yoga";
+
+import { builder } from "~/builder";
 
 const { handleRequest } = createYoga({
-  schema: createSchema({
-    typeDefs: /* GraphQL */ `
-      type Query {
-        greetings: String
-      }
-    `,
-    resolvers: {
-      Query: {
-        greetings: () =>
-          "This is the `greetings` field of the root `Query` type",
-      },
-    },
-  }),
+  schema: builder.toSchema(),
 
   // While using Next.js file convention for routing, we need to configure Yoga to use the correct endpoint
   graphqlEndpoint: "/api/graphql",

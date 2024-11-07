@@ -1,0 +1,172 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+generator drizzle {
+  provider = "drizzle-prisma-generator"
+  output   = "./drizzle" // Where to put generated Drizle tables
+}
+
+generator pothos {
+  provider = "prisma-pothos-types"
+}
+
+generator pothosCrud {
+  provider            = "prisma-generator-pothos-codegen"
+  generatorConfigPath = "../pothos.config.js"
+  // You may also set the `generatorConfigPath` via the `POTHOS_CRUD_CONFIG_PATH` environment variable.
+  // The environment variable will override the path hardcoded here.
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+  schemas   = ["auth", "public"]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model users {
+  id String @id @db.Uuid
+
+  // Mock relation to `hyper_profile` in the `public` schema
+  hyper_profile hyper_profile?
+
+  @@schema("auth")
+}
+
+model hyper_activity {
+  id                  String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  duration            Unsupported("interval")
+  activity_type_id    String                  @db.Uuid
+  profile_id          String                  @db.Uuid
+  created_at          DateTime                @default(now()) @db.Timestamp(6)
+  updatedAt           DateTime?               @db.Timestamptz(6)
+  hyper_activity_type hyper_activity_type     @relation(fields: [activity_type_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "hyper_activity_activity_type_id_hyper_activity_type_id_fk")
+  hyper_profile       hyper_profile           @relation(fields: [profile_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "hyper_activity_profile_id_hyper_profile_id_fk")
+
+  @@schema("public")
+}
+
+model hyper_activity_type {
+  id             String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name           String           @unique(map: "hyper_activity_type_name_unique") @db.VarChar(50)
+  hyper_activity hyper_activity[]
+
+  @@schema("public")
+}
+
+model hyper_cgm_data {
+  id                     String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  dexcom_user_id         String        @db.VarChar(255)
+  record_id              String        @unique(map: "cgm_data_record_id_idx") @db.VarChar(255)
+  system_time            DateTime      @db.Timestamptz(6)
+  display_time           DateTime      @db.Timestamptz(6)
+  glucose_value          Int?
+  trend                  String?       @db.VarChar(20)
+  trend_rate             Float?
+  transmitter_id         String?       @db.VarChar(255)
+  transmitter_generation String        @db.VarChar(20)
+  display_device         String        @db.VarChar(20)
+  profile_id             String        @db.Uuid
+  created_at             DateTime      @default(now()) @db.Timestamp(6)
+  updatedAt              DateTime?     @db.Timestamptz(6)
+  transmitter_ticks      Int
+  status                 String?       @db.VarChar(20)
+  unit                   String        @db.VarChar(10)
+  rate_unit              String        @db.VarChar(20)
+  hyper_profile          hyper_profile @relation(fields: [profile_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "hyper_cgm_data_profile_id_hyper_profile_id_fk")
+
+  @@index([profile_id], map: "cgm_data_profile_id_idx")
+  @@schema("public")
+}
+
+model hyper_daily_recap {
+  id                  String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  date                DateTime      @db.Timestamptz(6)
+  average_glucose     Int?
+  minimum_glucose     Int?
+  maximum_glucose     Int?
+  glucose_variability Decimal?      @db.Decimal
+  time_in_ranges      Json?
+  total_readings      Int?
+  profile_id          String        @db.Uuid
+  created_at          DateTime      @default(now()) @db.Timestamp(6)
+  updatedAt           DateTime?     @db.Timestamptz(6)
+  timezone            String        @db.VarChar(50)
+  hyper_profile       hyper_profile @relation(fields: [profile_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "hyper_daily_recap_profile_id_hyper_profile_id_fk")
+
+  @@unique([profile_id, date], map: "daily_recap_profile_id_date_idx")
+  @@unique([date, profile_id], map: "hyper_daily_recap_date_profile_id_unique")
+  @@schema("public")
+}
+
+model hyper_meal {
+  id             String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  meal_time      DateTime      @default(now()) @db.Timestamptz(6)
+  carbohydrates  Float?
+  dietary_energy Float?
+  dietary_sugar  Float?
+  fiber          Float?
+  protein        Float?
+  total_fat      Float?
+  profile_id     String        @db.Uuid
+  created_at     DateTime      @default(now()) @db.Timestamp(6)
+  updatedAt      DateTime?     @db.Timestamptz(6)
+  hyper_profile  hyper_profile @relation(fields: [profile_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "hyper_meal_profile_id_hyper_profile_id_fk")
+
+  @@schema("public")
+}
+
+model hyper_profile {
+  id                 String              @id @db.Uuid
+  name               String              @db.VarChar(256)
+  image              String?             @db.VarChar(256)
+  email              String?             @unique(map: "email_idx") @db.VarChar(256)
+  last_synced_time   DateTime?           @db.Timestamptz(6)
+  diabetes_status    diabetes_status     @default(none)
+  glucose_range_type glucose_range_type  @default(tight)
+  hyper_activity     hyper_activity[]
+  hyper_cgm_data     hyper_cgm_data[]
+  hyper_daily_recap  hyper_daily_recap[]
+  hyper_meal         hyper_meal[]
+  users              users               @relation(fields: [id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "hyper_profile_id_users_id_fk")
+  hyper_report       hyper_report[]
+
+  @@index([name], map: "name_idx")
+  @@schema("public")
+}
+
+model hyper_report {
+  id            String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title         String        @db.VarChar(256)
+  content       String?
+  profile_id    String        @db.Uuid
+  created_at    DateTime      @default(now()) @db.Timestamp(6)
+  updatedAt     DateTime?     @db.Timestamptz(6)
+  hyper_profile hyper_profile @relation(fields: [profile_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "hyper_report_profile_id_hyper_profile_id_fk")
+
+  @@schema("public")
+}
+
+enum diabetes_status {
+  none
+  pre
+  type1
+  type2
+  type3
+
+  @@schema("public")
+}
+
+enum glucose_range_type {
+  standard
+  tight
+  optimal
+
+  @@schema("public")
+}

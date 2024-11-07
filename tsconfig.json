@@ -1,19 +1,37 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    /** Base Options */
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "allowJs": true,
     "resolveJsonModule": true,
+    "moduleDetection": "force",
     "isolatedModules": true,
-    "jsx": "preserve",
+
+    /** Keep TSC performant in monorepos */
     "incremental": true,
+    "disableSourceOfProjectReferenceRedirect": true,
+    "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json",
+
+    /** Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "checkJs": true,
+
+    /** Transpile using Bundler (not tsc) */
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+
+    /** Additional Next.js and Project Configurations */
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"]
+    },
     "plugins": [
       {
         "name": "next"
@@ -23,11 +41,8 @@
         "schema": "./schema.graphql",
         "tadaOutputLocation": "./graphql-env.d.ts"
       }
-    ],
-    "paths": {
-      "@/*": ["./*"]
-    }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [".", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "build", "dist", ".next", ".expo"]
 }
