@@ -14,7 +14,7 @@ import {
   PrismaObjectTypeOptions,
   RelatedFieldOptions,
 } from '@pothos/plugin-prisma';
-import { builder } from '../../builder';
+import { builder } from '../../schema/builder';
 
 type Types = typeof builder extends PothosSchemaTypes.SchemaBuilder<infer T> ? T : unknown;
 

@@ -1,8 +1,8 @@
-import type PrismaTypes from "@pothos/plugin-prisma/generated";
 import SchemaBuilder from "@pothos/core";
 import PrismaPlugin from "@pothos/plugin-prisma";
 import { Scalars } from "prisma-generator-pothos-codegen";
 
+import type PrismaTypes from "~/generated/objects";
 import { db } from "~/server/db";
 import { Prisma } from ".prisma/client";
 

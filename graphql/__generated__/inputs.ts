@@ -1,7 +1,7 @@
 // @ts-nocheck
-import { Prisma } from '.prisma/client';
+import { Prisma } from '@prisma/client';
 
-import { builder } from '../../builder';
+import { builder } from '../../schema/builder';
 
 type Filters = {
   string: Prisma.StringFieldUpdateOperationsInput;
@@ -156,26 +156,6 @@ export const usersWhereUniqueInput = builder.inputRef<PrismaUpdateOperationsInpu
   fields: usersWhereUniqueInputFields,
 });
 
-export const usersOrderByWithAggregationInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  _count: t.field({"required":false,"type":usersCountOrderByAggregateInput}),
-  _max: t.field({"required":false,"type":usersMaxOrderByAggregateInput}),
-  _min: t.field({"required":false,"type":usersMinOrderByAggregateInput}),
-});
-export const usersOrderByWithAggregationInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersOrderByWithAggregationInput>, false>('usersOrderByWithAggregationInput').implement({
-  fields: usersOrderByWithAggregationInputFields,
-});
-
-export const usersScalarWhereWithAggregatesInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[usersScalarWhereWithAggregatesInput]}),
-  OR: t.field({"required":false,"type":[usersScalarWhereWithAggregatesInput]}),
-  NOT: t.field({"required":false,"type":[usersScalarWhereWithAggregatesInput]}),
-  id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-});
-export const usersScalarWhereWithAggregatesInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersScalarWhereWithAggregatesInput>, false>('usersScalarWhereWithAggregatesInput').implement({
-  fields: usersScalarWhereWithAggregatesInputFields,
-});
-
 export const hyper_activityWhereInputFields = (t: any) => ({
   AND: t.field({"required":false,"type":[hyper_activityWhereInput]}),
   OR: t.field({"required":false,"type":[hyper_activityWhereInput]}),
@@ -221,34 +201,6 @@ export const hyper_activityWhereUniqueInput = builder.inputRef<PrismaUpdateOpera
   fields: hyper_activityWhereUniqueInputFields,
 });
 
-export const hyper_activityOrderByWithAggregationInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  activity_type_id: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  _count: t.field({"required":false,"type":hyper_activityCountOrderByAggregateInput}),
-  _max: t.field({"required":false,"type":hyper_activityMaxOrderByAggregateInput}),
-  _min: t.field({"required":false,"type":hyper_activityMinOrderByAggregateInput}),
-});
-export const hyper_activityOrderByWithAggregationInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityOrderByWithAggregationInput>, false>('hyper_activityOrderByWithAggregationInput').implement({
-  fields: hyper_activityOrderByWithAggregationInputFields,
-});
-
-export const hyper_activityScalarWhereWithAggregatesInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_activityScalarWhereWithAggregatesInput]}),
-  OR: t.field({"required":false,"type":[hyper_activityScalarWhereWithAggregatesInput]}),
-  NOT: t.field({"required":false,"type":[hyper_activityScalarWhereWithAggregatesInput]}),
-  id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  activity_type_id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  profile_id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  created_at: t.field({"required":false,"type":DateTimeWithAggregatesFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableWithAggregatesFilter}),
-});
-export const hyper_activityScalarWhereWithAggregatesInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityScalarWhereWithAggregatesInput>, false>('hyper_activityScalarWhereWithAggregatesInput').implement({
-  fields: hyper_activityScalarWhereWithAggregatesInputFields,
-});
-
 export const hyper_activity_typeWhereInputFields = (t: any) => ({
   AND: t.field({"required":false,"type":[hyper_activity_typeWhereInput]}),
   OR: t.field({"required":false,"type":[hyper_activity_typeWhereInput]}),
@@ -280,28 +232,6 @@ export const hyper_activity_typeWhereUniqueInputFields = (t: any) => ({
 });
 export const hyper_activity_typeWhereUniqueInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeWhereUniqueInput>, false>('hyper_activity_typeWhereUniqueInput').implement({
   fields: hyper_activity_typeWhereUniqueInputFields,
-});
-
-export const hyper_activity_typeOrderByWithAggregationInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  name: t.field({"required":false,"type":SortOrder}),
-  _count: t.field({"required":false,"type":hyper_activity_typeCountOrderByAggregateInput}),
-  _max: t.field({"required":false,"type":hyper_activity_typeMaxOrderByAggregateInput}),
-  _min: t.field({"required":false,"type":hyper_activity_typeMinOrderByAggregateInput}),
-});
-export const hyper_activity_typeOrderByWithAggregationInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeOrderByWithAggregationInput>, false>('hyper_activity_typeOrderByWithAggregationInput').implement({
-  fields: hyper_activity_typeOrderByWithAggregationInputFields,
-});
-
-export const hyper_activity_typeScalarWhereWithAggregatesInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_activity_typeScalarWhereWithAggregatesInput]}),
-  OR: t.field({"required":false,"type":[hyper_activity_typeScalarWhereWithAggregatesInput]}),
-  NOT: t.field({"required":false,"type":[hyper_activity_typeScalarWhereWithAggregatesInput]}),
-  id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  name: t.field({"required":false,"type":StringWithAggregatesFilter}),
-});
-export const hyper_activity_typeScalarWhereWithAggregatesInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeScalarWhereWithAggregatesInput>, false>('hyper_activity_typeScalarWhereWithAggregatesInput').implement({
-  fields: hyper_activity_typeScalarWhereWithAggregatesInputFields,
 });
 
 export const hyper_cgm_dataWhereInputFields = (t: any) => ({
@@ -385,62 +315,6 @@ export const hyper_cgm_dataWhereUniqueInput = builder.inputRef<PrismaUpdateOpera
   fields: hyper_cgm_dataWhereUniqueInputFields,
 });
 
-export const hyper_cgm_dataOrderByWithAggregationInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  dexcom_user_id: t.field({"required":false,"type":SortOrder}),
-  record_id: t.field({"required":false,"type":SortOrder}),
-  system_time: t.field({"required":false,"type":SortOrder}),
-  display_time: t.field({"required":false,"type":SortOrder}),
-  glucose_value: t.field({"required":false,"type":SortOrder}),
-  trend: t.field({"required":false,"type":SortOrder}),
-  trend_rate: t.field({"required":false,"type":SortOrder}),
-  transmitter_id: t.field({"required":false,"type":SortOrder}),
-  transmitter_generation: t.field({"required":false,"type":SortOrder}),
-  display_device: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  transmitter_ticks: t.field({"required":false,"type":SortOrder}),
-  status: t.field({"required":false,"type":SortOrder}),
-  unit: t.field({"required":false,"type":SortOrder}),
-  rate_unit: t.field({"required":false,"type":SortOrder}),
-  _count: t.field({"required":false,"type":hyper_cgm_dataCountOrderByAggregateInput}),
-  _avg: t.field({"required":false,"type":hyper_cgm_dataAvgOrderByAggregateInput}),
-  _max: t.field({"required":false,"type":hyper_cgm_dataMaxOrderByAggregateInput}),
-  _min: t.field({"required":false,"type":hyper_cgm_dataMinOrderByAggregateInput}),
-  _sum: t.field({"required":false,"type":hyper_cgm_dataSumOrderByAggregateInput}),
-});
-export const hyper_cgm_dataOrderByWithAggregationInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataOrderByWithAggregationInput>, false>('hyper_cgm_dataOrderByWithAggregationInput').implement({
-  fields: hyper_cgm_dataOrderByWithAggregationInputFields,
-});
-
-export const hyper_cgm_dataScalarWhereWithAggregatesInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_cgm_dataScalarWhereWithAggregatesInput]}),
-  OR: t.field({"required":false,"type":[hyper_cgm_dataScalarWhereWithAggregatesInput]}),
-  NOT: t.field({"required":false,"type":[hyper_cgm_dataScalarWhereWithAggregatesInput]}),
-  id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  dexcom_user_id: t.field({"required":false,"type":StringWithAggregatesFilter}),
-  record_id: t.field({"required":false,"type":StringWithAggregatesFilter}),
-  system_time: t.field({"required":false,"type":DateTimeWithAggregatesFilter}),
-  display_time: t.field({"required":false,"type":DateTimeWithAggregatesFilter}),
-  glucose_value: t.field({"required":false,"type":IntNullableWithAggregatesFilter}),
-  trend: t.field({"required":false,"type":StringNullableWithAggregatesFilter}),
-  trend_rate: t.field({"required":false,"type":FloatNullableWithAggregatesFilter}),
-  transmitter_id: t.field({"required":false,"type":StringNullableWithAggregatesFilter}),
-  transmitter_generation: t.field({"required":false,"type":StringWithAggregatesFilter}),
-  display_device: t.field({"required":false,"type":StringWithAggregatesFilter}),
-  profile_id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  created_at: t.field({"required":false,"type":DateTimeWithAggregatesFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableWithAggregatesFilter}),
-  transmitter_ticks: t.field({"required":false,"type":IntWithAggregatesFilter}),
-  status: t.field({"required":false,"type":StringNullableWithAggregatesFilter}),
-  unit: t.field({"required":false,"type":StringWithAggregatesFilter}),
-  rate_unit: t.field({"required":false,"type":StringWithAggregatesFilter}),
-});
-export const hyper_cgm_dataScalarWhereWithAggregatesInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataScalarWhereWithAggregatesInput>, false>('hyper_cgm_dataScalarWhereWithAggregatesInput').implement({
-  fields: hyper_cgm_dataScalarWhereWithAggregatesInputFields,
-});
-
 export const hyper_daily_recapWhereInputFields = (t: any) => ({
   AND: t.field({"required":false,"type":[hyper_daily_recapWhereInput]}),
   OR: t.field({"required":false,"type":[hyper_daily_recapWhereInput]}),
@@ -506,50 +380,6 @@ export const hyper_daily_recapWhereUniqueInput = builder.inputRef<PrismaUpdateOp
   fields: hyper_daily_recapWhereUniqueInputFields,
 });
 
-export const hyper_daily_recapOrderByWithAggregationInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  date: t.field({"required":false,"type":SortOrder}),
-  average_glucose: t.field({"required":false,"type":SortOrder}),
-  minimum_glucose: t.field({"required":false,"type":SortOrder}),
-  maximum_glucose: t.field({"required":false,"type":SortOrder}),
-  glucose_variability: t.field({"required":false,"type":SortOrder}),
-  time_in_ranges: t.field({"required":false,"type":SortOrder}),
-  total_readings: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  timezone: t.field({"required":false,"type":SortOrder}),
-  _count: t.field({"required":false,"type":hyper_daily_recapCountOrderByAggregateInput}),
-  _avg: t.field({"required":false,"type":hyper_daily_recapAvgOrderByAggregateInput}),
-  _max: t.field({"required":false,"type":hyper_daily_recapMaxOrderByAggregateInput}),
-  _min: t.field({"required":false,"type":hyper_daily_recapMinOrderByAggregateInput}),
-  _sum: t.field({"required":false,"type":hyper_daily_recapSumOrderByAggregateInput}),
-});
-export const hyper_daily_recapOrderByWithAggregationInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapOrderByWithAggregationInput>, false>('hyper_daily_recapOrderByWithAggregationInput').implement({
-  fields: hyper_daily_recapOrderByWithAggregationInputFields,
-});
-
-export const hyper_daily_recapScalarWhereWithAggregatesInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_daily_recapScalarWhereWithAggregatesInput]}),
-  OR: t.field({"required":false,"type":[hyper_daily_recapScalarWhereWithAggregatesInput]}),
-  NOT: t.field({"required":false,"type":[hyper_daily_recapScalarWhereWithAggregatesInput]}),
-  id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  date: t.field({"required":false,"type":DateTimeWithAggregatesFilter}),
-  average_glucose: t.field({"required":false,"type":IntNullableWithAggregatesFilter}),
-  minimum_glucose: t.field({"required":false,"type":IntNullableWithAggregatesFilter}),
-  maximum_glucose: t.field({"required":false,"type":IntNullableWithAggregatesFilter}),
-  glucose_variability: t.field({"required":false,"type":DecimalNullableWithAggregatesFilter}),
-  time_in_ranges: t.field({"required":false,"type":JsonNullableWithAggregatesFilter}),
-  total_readings: t.field({"required":false,"type":IntNullableWithAggregatesFilter}),
-  profile_id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  created_at: t.field({"required":false,"type":DateTimeWithAggregatesFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableWithAggregatesFilter}),
-  timezone: t.field({"required":false,"type":StringWithAggregatesFilter}),
-});
-export const hyper_daily_recapScalarWhereWithAggregatesInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapScalarWhereWithAggregatesInput>, false>('hyper_daily_recapScalarWhereWithAggregatesInput').implement({
-  fields: hyper_daily_recapScalarWhereWithAggregatesInputFields,
-});
-
 export const hyper_mealWhereInputFields = (t: any) => ({
   AND: t.field({"required":false,"type":[hyper_mealWhereInput]}),
   OR: t.field({"required":false,"type":[hyper_mealWhereInput]}),
@@ -608,48 +438,6 @@ export const hyper_mealWhereUniqueInputFields = (t: any) => ({
 });
 export const hyper_mealWhereUniqueInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealWhereUniqueInput>, false>('hyper_mealWhereUniqueInput').implement({
   fields: hyper_mealWhereUniqueInputFields,
-});
-
-export const hyper_mealOrderByWithAggregationInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  meal_time: t.field({"required":false,"type":SortOrder}),
-  carbohydrates: t.field({"required":false,"type":SortOrder}),
-  dietary_energy: t.field({"required":false,"type":SortOrder}),
-  dietary_sugar: t.field({"required":false,"type":SortOrder}),
-  fiber: t.field({"required":false,"type":SortOrder}),
-  protein: t.field({"required":false,"type":SortOrder}),
-  total_fat: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  _count: t.field({"required":false,"type":hyper_mealCountOrderByAggregateInput}),
-  _avg: t.field({"required":false,"type":hyper_mealAvgOrderByAggregateInput}),
-  _max: t.field({"required":false,"type":hyper_mealMaxOrderByAggregateInput}),
-  _min: t.field({"required":false,"type":hyper_mealMinOrderByAggregateInput}),
-  _sum: t.field({"required":false,"type":hyper_mealSumOrderByAggregateInput}),
-});
-export const hyper_mealOrderByWithAggregationInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealOrderByWithAggregationInput>, false>('hyper_mealOrderByWithAggregationInput').implement({
-  fields: hyper_mealOrderByWithAggregationInputFields,
-});
-
-export const hyper_mealScalarWhereWithAggregatesInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_mealScalarWhereWithAggregatesInput]}),
-  OR: t.field({"required":false,"type":[hyper_mealScalarWhereWithAggregatesInput]}),
-  NOT: t.field({"required":false,"type":[hyper_mealScalarWhereWithAggregatesInput]}),
-  id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  meal_time: t.field({"required":false,"type":DateTimeWithAggregatesFilter}),
-  carbohydrates: t.field({"required":false,"type":FloatNullableWithAggregatesFilter}),
-  dietary_energy: t.field({"required":false,"type":FloatNullableWithAggregatesFilter}),
-  dietary_sugar: t.field({"required":false,"type":FloatNullableWithAggregatesFilter}),
-  fiber: t.field({"required":false,"type":FloatNullableWithAggregatesFilter}),
-  protein: t.field({"required":false,"type":FloatNullableWithAggregatesFilter}),
-  total_fat: t.field({"required":false,"type":FloatNullableWithAggregatesFilter}),
-  profile_id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  created_at: t.field({"required":false,"type":DateTimeWithAggregatesFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableWithAggregatesFilter}),
-});
-export const hyper_mealScalarWhereWithAggregatesInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealScalarWhereWithAggregatesInput>, false>('hyper_mealScalarWhereWithAggregatesInput').implement({
-  fields: hyper_mealScalarWhereWithAggregatesInputFields,
 });
 
 export const hyper_profileWhereInputFields = (t: any) => ({
@@ -715,38 +503,6 @@ export const hyper_profileWhereUniqueInput = builder.inputRef<PrismaUpdateOperat
   fields: hyper_profileWhereUniqueInputFields,
 });
 
-export const hyper_profileOrderByWithAggregationInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  name: t.field({"required":false,"type":SortOrder}),
-  image: t.field({"required":false,"type":SortOrder}),
-  email: t.field({"required":false,"type":SortOrder}),
-  last_synced_time: t.field({"required":false,"type":SortOrder}),
-  diabetes_status: t.field({"required":false,"type":SortOrder}),
-  glucose_range_type: t.field({"required":false,"type":SortOrder}),
-  _count: t.field({"required":false,"type":hyper_profileCountOrderByAggregateInput}),
-  _max: t.field({"required":false,"type":hyper_profileMaxOrderByAggregateInput}),
-  _min: t.field({"required":false,"type":hyper_profileMinOrderByAggregateInput}),
-});
-export const hyper_profileOrderByWithAggregationInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileOrderByWithAggregationInput>, false>('hyper_profileOrderByWithAggregationInput').implement({
-  fields: hyper_profileOrderByWithAggregationInputFields,
-});
-
-export const hyper_profileScalarWhereWithAggregatesInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_profileScalarWhereWithAggregatesInput]}),
-  OR: t.field({"required":false,"type":[hyper_profileScalarWhereWithAggregatesInput]}),
-  NOT: t.field({"required":false,"type":[hyper_profileScalarWhereWithAggregatesInput]}),
-  id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  name: t.field({"required":false,"type":StringWithAggregatesFilter}),
-  image: t.field({"required":false,"type":StringNullableWithAggregatesFilter}),
-  email: t.field({"required":false,"type":StringNullableWithAggregatesFilter}),
-  last_synced_time: t.field({"required":false,"type":DateTimeNullableWithAggregatesFilter}),
-  diabetes_status: t.field({"required":false,"type":Enumdiabetes_statusWithAggregatesFilter}),
-  glucose_range_type: t.field({"required":false,"type":Enumglucose_range_typeWithAggregatesFilter}),
-});
-export const hyper_profileScalarWhereWithAggregatesInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileScalarWhereWithAggregatesInput>, false>('hyper_profileScalarWhereWithAggregatesInput').implement({
-  fields: hyper_profileScalarWhereWithAggregatesInputFields,
-});
-
 export const hyper_reportWhereInputFields = (t: any) => ({
   AND: t.field({"required":false,"type":[hyper_reportWhereInput]}),
   OR: t.field({"required":false,"type":[hyper_reportWhereInput]}),
@@ -792,41 +548,11 @@ export const hyper_reportWhereUniqueInput = builder.inputRef<PrismaUpdateOperati
   fields: hyper_reportWhereUniqueInputFields,
 });
 
-export const hyper_reportOrderByWithAggregationInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  title: t.field({"required":false,"type":SortOrder}),
-  content: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  _count: t.field({"required":false,"type":hyper_reportCountOrderByAggregateInput}),
-  _max: t.field({"required":false,"type":hyper_reportMaxOrderByAggregateInput}),
-  _min: t.field({"required":false,"type":hyper_reportMinOrderByAggregateInput}),
-});
-export const hyper_reportOrderByWithAggregationInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportOrderByWithAggregationInput>, false>('hyper_reportOrderByWithAggregationInput').implement({
-  fields: hyper_reportOrderByWithAggregationInputFields,
-});
-
-export const hyper_reportScalarWhereWithAggregatesInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_reportScalarWhereWithAggregatesInput]}),
-  OR: t.field({"required":false,"type":[hyper_reportScalarWhereWithAggregatesInput]}),
-  NOT: t.field({"required":false,"type":[hyper_reportScalarWhereWithAggregatesInput]}),
-  id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  title: t.field({"required":false,"type":StringWithAggregatesFilter}),
-  content: t.field({"required":false,"type":StringNullableWithAggregatesFilter}),
-  profile_id: t.field({"required":false,"type":UuidWithAggregatesFilter}),
-  created_at: t.field({"required":false,"type":DateTimeWithAggregatesFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableWithAggregatesFilter}),
-});
-export const hyper_reportScalarWhereWithAggregatesInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportScalarWhereWithAggregatesInput>, false>('hyper_reportScalarWhereWithAggregatesInput').implement({
-  fields: hyper_reportScalarWhereWithAggregatesInputFields,
-});
-
 export const usersCreateInputFields = (t: any) => ({
   id: t.string({"required":true}),
   hyper_profile: t.field({"required":false,"type":hyper_profileCreateNestedOneWithoutUsersInput}),
 });
-export const usersCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersCreateInput>, false>('usersCreateInput').implement({
+export const usersCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersUncheckedCreateInput>, false>('usersCreateInput').implement({
   fields: usersCreateInputFields,
 });
 
@@ -834,15 +560,8 @@ export const usersUpdateInputFields = (t: any) => ({
   id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   hyper_profile: t.field({"required":false,"type":hyper_profileUpdateOneWithoutUsersNestedInput}),
 });
-export const usersUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersUpdateInput>, false>('usersUpdateInput').implement({
+export const usersUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersUncheckedUpdateInput>, false>('usersUpdateInput').implement({
   fields: usersUpdateInputFields,
-});
-
-export const usersCreateManyInputFields = (t: any) => ({
-  id: t.string({"required":true}),
-});
-export const usersCreateManyInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersCreateManyInput>, false>('usersCreateManyInput').implement({
-  fields: usersCreateManyInputFields,
 });
 
 export const usersUpdateManyMutationInputFields = (t: any) => ({
@@ -854,12 +573,12 @@ export const usersUpdateManyMutationInput = builder.inputRef<PrismaUpdateOperati
 
 export const hyper_activityUpdateInputFields = (t: any) => ({
   id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
+  activity_type_id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
+  profile_id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
   updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  hyper_activity_type: t.field({"required":false,"type":hyper_activity_typeUpdateOneRequiredWithoutHyper_activityNestedInput}),
-  hyper_profile: t.field({"required":false,"type":hyper_profileUpdateOneRequiredWithoutHyper_activityNestedInput}),
 });
-export const hyper_activityUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUpdateInput>, false>('hyper_activityUpdateInput').implement({
+export const hyper_activityUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUncheckedUpdateInput>, false>('hyper_activityUpdateInput').implement({
   fields: hyper_activityUpdateInputFields,
 });
 
@@ -877,7 +596,7 @@ export const hyper_activity_typeCreateInputFields = (t: any) => ({
   name: t.string({"required":true}),
   hyper_activity: t.field({"required":false,"type":hyper_activityCreateNestedManyWithoutHyper_activity_typeInput}),
 });
-export const hyper_activity_typeCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeCreateInput>, false>('hyper_activity_typeCreateInput').implement({
+export const hyper_activity_typeCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeUncheckedCreateInput>, false>('hyper_activity_typeCreateInput').implement({
   fields: hyper_activity_typeCreateInputFields,
 });
 
@@ -886,16 +605,8 @@ export const hyper_activity_typeUpdateInputFields = (t: any) => ({
   name: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   hyper_activity: t.field({"required":false,"type":hyper_activityUpdateManyWithoutHyper_activity_typeNestedInput}),
 });
-export const hyper_activity_typeUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeUpdateInput>, false>('hyper_activity_typeUpdateInput').implement({
+export const hyper_activity_typeUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeUncheckedUpdateInput>, false>('hyper_activity_typeUpdateInput').implement({
   fields: hyper_activity_typeUpdateInputFields,
-});
-
-export const hyper_activity_typeCreateManyInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  name: t.string({"required":true}),
-});
-export const hyper_activity_typeCreateManyInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeCreateManyInput>, false>('hyper_activity_typeCreateManyInput').implement({
-  fields: hyper_activity_typeCreateManyInputFields,
 });
 
 export const hyper_activity_typeUpdateManyMutationInputFields = (t: any) => ({
@@ -918,15 +629,15 @@ export const hyper_cgm_dataCreateInputFields = (t: any) => ({
   transmitter_id: t.string({"required":false}),
   transmitter_generation: t.string({"required":true}),
   display_device: t.string({"required":true}),
+  profile_id: t.string({"required":true}),
   created_at: t.field({"required":false,"type":DateTime}),
   updatedAt: t.field({"required":false,"type":DateTime}),
   transmitter_ticks: t.int({"required":true}),
   status: t.string({"required":false}),
   unit: t.string({"required":true}),
   rate_unit: t.string({"required":true}),
-  hyper_profile: t.field({"required":true,"type":hyper_profileCreateNestedOneWithoutHyper_cgm_dataInput}),
 });
-export const hyper_cgm_dataCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataCreateInput>, false>('hyper_cgm_dataCreateInput').implement({
+export const hyper_cgm_dataCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataUncheckedCreateInput>, false>('hyper_cgm_dataCreateInput').implement({
   fields: hyper_cgm_dataCreateInputFields,
 });
 
@@ -942,40 +653,16 @@ export const hyper_cgm_dataUpdateInputFields = (t: any) => ({
   transmitter_id: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
   transmitter_generation: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   display_device: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
+  profile_id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
   updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
   transmitter_ticks: t.field({"required":false,"type":IntFieldUpdateOperationsInput}),
   status: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
   unit: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   rate_unit: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  hyper_profile: t.field({"required":false,"type":hyper_profileUpdateOneRequiredWithoutHyper_cgm_dataNestedInput}),
 });
-export const hyper_cgm_dataUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataUpdateInput>, false>('hyper_cgm_dataUpdateInput').implement({
+export const hyper_cgm_dataUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataUncheckedUpdateInput>, false>('hyper_cgm_dataUpdateInput').implement({
   fields: hyper_cgm_dataUpdateInputFields,
-});
-
-export const hyper_cgm_dataCreateManyInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  dexcom_user_id: t.string({"required":true}),
-  record_id: t.string({"required":true}),
-  system_time: t.field({"required":true,"type":DateTime}),
-  display_time: t.field({"required":true,"type":DateTime}),
-  glucose_value: t.int({"required":false}),
-  trend: t.string({"required":false}),
-  trend_rate: t.float({"required":false}),
-  transmitter_id: t.string({"required":false}),
-  transmitter_generation: t.string({"required":true}),
-  display_device: t.string({"required":true}),
-  profile_id: t.string({"required":true}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-  transmitter_ticks: t.int({"required":true}),
-  status: t.string({"required":false}),
-  unit: t.string({"required":true}),
-  rate_unit: t.string({"required":true}),
-});
-export const hyper_cgm_dataCreateManyInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataCreateManyInput>, false>('hyper_cgm_dataCreateManyInput').implement({
-  fields: hyper_cgm_dataCreateManyInputFields,
 });
 
 export const hyper_cgm_dataUpdateManyMutationInputFields = (t: any) => ({
@@ -1010,12 +697,12 @@ export const hyper_daily_recapCreateInputFields = (t: any) => ({
   glucose_variability: t.field({"required":false,"type":Decimal}),
   time_in_ranges: t.field({"required":false,"type":Json}),
   total_readings: t.int({"required":false}),
+  profile_id: t.string({"required":true}),
   created_at: t.field({"required":false,"type":DateTime}),
   updatedAt: t.field({"required":false,"type":DateTime}),
   timezone: t.string({"required":true}),
-  hyper_profile: t.field({"required":true,"type":hyper_profileCreateNestedOneWithoutHyper_daily_recapInput}),
 });
-export const hyper_daily_recapCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapCreateInput>, false>('hyper_daily_recapCreateInput').implement({
+export const hyper_daily_recapCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapUncheckedCreateInput>, false>('hyper_daily_recapCreateInput').implement({
   fields: hyper_daily_recapCreateInputFields,
 });
 
@@ -1028,31 +715,13 @@ export const hyper_daily_recapUpdateInputFields = (t: any) => ({
   glucose_variability: t.field({"required":false,"type":NullableDecimalFieldUpdateOperationsInput}),
   time_in_ranges: t.field({"required":false,"type":Json}),
   total_readings: t.field({"required":false,"type":NullableIntFieldUpdateOperationsInput}),
+  profile_id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
   updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
   timezone: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  hyper_profile: t.field({"required":false,"type":hyper_profileUpdateOneRequiredWithoutHyper_daily_recapNestedInput}),
 });
-export const hyper_daily_recapUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapUpdateInput>, false>('hyper_daily_recapUpdateInput').implement({
+export const hyper_daily_recapUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapUncheckedUpdateInput>, false>('hyper_daily_recapUpdateInput').implement({
   fields: hyper_daily_recapUpdateInputFields,
-});
-
-export const hyper_daily_recapCreateManyInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  date: t.field({"required":true,"type":DateTime}),
-  average_glucose: t.int({"required":false}),
-  minimum_glucose: t.int({"required":false}),
-  maximum_glucose: t.int({"required":false}),
-  glucose_variability: t.field({"required":false,"type":Decimal}),
-  time_in_ranges: t.field({"required":false,"type":Json}),
-  total_readings: t.int({"required":false}),
-  profile_id: t.string({"required":true}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-  timezone: t.string({"required":true}),
-});
-export const hyper_daily_recapCreateManyInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapCreateManyInput>, false>('hyper_daily_recapCreateManyInput').implement({
-  fields: hyper_daily_recapCreateManyInputFields,
 });
 
 export const hyper_daily_recapUpdateManyMutationInputFields = (t: any) => ({
@@ -1081,11 +750,11 @@ export const hyper_mealCreateInputFields = (t: any) => ({
   fiber: t.float({"required":false}),
   protein: t.float({"required":false}),
   total_fat: t.float({"required":false}),
+  profile_id: t.string({"required":true}),
   created_at: t.field({"required":false,"type":DateTime}),
   updatedAt: t.field({"required":false,"type":DateTime}),
-  hyper_profile: t.field({"required":true,"type":hyper_profileCreateNestedOneWithoutHyper_mealInput}),
 });
-export const hyper_mealCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealCreateInput>, false>('hyper_mealCreateInput').implement({
+export const hyper_mealCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealUncheckedCreateInput>, false>('hyper_mealCreateInput').implement({
   fields: hyper_mealCreateInputFields,
 });
 
@@ -1098,29 +767,12 @@ export const hyper_mealUpdateInputFields = (t: any) => ({
   fiber: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
   protein: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
   total_fat: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
+  profile_id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
   updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  hyper_profile: t.field({"required":false,"type":hyper_profileUpdateOneRequiredWithoutHyper_mealNestedInput}),
 });
-export const hyper_mealUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealUpdateInput>, false>('hyper_mealUpdateInput').implement({
+export const hyper_mealUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealUncheckedUpdateInput>, false>('hyper_mealUpdateInput').implement({
   fields: hyper_mealUpdateInputFields,
-});
-
-export const hyper_mealCreateManyInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  meal_time: t.field({"required":false,"type":DateTime}),
-  carbohydrates: t.float({"required":false}),
-  dietary_energy: t.float({"required":false}),
-  dietary_sugar: t.float({"required":false}),
-  fiber: t.float({"required":false}),
-  protein: t.float({"required":false}),
-  total_fat: t.float({"required":false}),
-  profile_id: t.string({"required":true}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-});
-export const hyper_mealCreateManyInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealCreateManyInput>, false>('hyper_mealCreateManyInput').implement({
-  fields: hyper_mealCreateManyInputFields,
 });
 
 export const hyper_mealUpdateManyMutationInputFields = (t: any) => ({
@@ -1140,6 +792,7 @@ export const hyper_mealUpdateManyMutationInput = builder.inputRef<PrismaUpdateOp
 });
 
 export const hyper_profileCreateInputFields = (t: any) => ({
+  id: t.string({"required":true}),
   name: t.string({"required":true}),
   image: t.string({"required":false}),
   email: t.string({"required":false}),
@@ -1150,14 +803,14 @@ export const hyper_profileCreateInputFields = (t: any) => ({
   hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataCreateNestedManyWithoutHyper_profileInput}),
   hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapCreateNestedManyWithoutHyper_profileInput}),
   hyper_meal: t.field({"required":false,"type":hyper_mealCreateNestedManyWithoutHyper_profileInput}),
-  users: t.field({"required":true,"type":usersCreateNestedOneWithoutHyper_profileInput}),
   hyper_report: t.field({"required":false,"type":hyper_reportCreateNestedManyWithoutHyper_profileInput}),
 });
-export const hyper_profileCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateInput>, false>('hyper_profileCreateInput').implement({
+export const hyper_profileCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUncheckedCreateInput>, false>('hyper_profileCreateInput').implement({
   fields: hyper_profileCreateInputFields,
 });
 
 export const hyper_profileUpdateInputFields = (t: any) => ({
+  id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   name: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   image: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
   email: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
@@ -1168,24 +821,10 @@ export const hyper_profileUpdateInputFields = (t: any) => ({
   hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInput}),
   hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapUpdateManyWithoutHyper_profileNestedInput}),
   hyper_meal: t.field({"required":false,"type":hyper_mealUpdateManyWithoutHyper_profileNestedInput}),
-  users: t.field({"required":false,"type":usersUpdateOneRequiredWithoutHyper_profileNestedInput}),
   hyper_report: t.field({"required":false,"type":hyper_reportUpdateManyWithoutHyper_profileNestedInput}),
 });
-export const hyper_profileUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateInput>, false>('hyper_profileUpdateInput').implement({
+export const hyper_profileUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUncheckedUpdateInput>, false>('hyper_profileUpdateInput').implement({
   fields: hyper_profileUpdateInputFields,
-});
-
-export const hyper_profileCreateManyInputFields = (t: any) => ({
-  id: t.string({"required":true}),
-  name: t.string({"required":true}),
-  image: t.string({"required":false}),
-  email: t.string({"required":false}),
-  last_synced_time: t.field({"required":false,"type":DateTime}),
-  diabetes_status: t.field({"required":false,"type":diabetes_status}),
-  glucose_range_type: t.field({"required":false,"type":glucose_range_type}),
-});
-export const hyper_profileCreateManyInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateManyInput>, false>('hyper_profileCreateManyInput').implement({
-  fields: hyper_profileCreateManyInputFields,
 });
 
 export const hyper_profileUpdateManyMutationInputFields = (t: any) => ({
@@ -1204,11 +843,11 @@ export const hyper_reportCreateInputFields = (t: any) => ({
   id: t.string({"required":false}),
   title: t.string({"required":true}),
   content: t.string({"required":false}),
+  profile_id: t.string({"required":true}),
   created_at: t.field({"required":false,"type":DateTime}),
   updatedAt: t.field({"required":false,"type":DateTime}),
-  hyper_profile: t.field({"required":true,"type":hyper_profileCreateNestedOneWithoutHyper_reportInput}),
 });
-export const hyper_reportCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportCreateInput>, false>('hyper_reportCreateInput').implement({
+export const hyper_reportCreateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportUncheckedCreateInput>, false>('hyper_reportCreateInput').implement({
   fields: hyper_reportCreateInputFields,
 });
 
@@ -1216,24 +855,12 @@ export const hyper_reportUpdateInputFields = (t: any) => ({
   id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   title: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   content: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
+  profile_id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
   created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
   updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  hyper_profile: t.field({"required":false,"type":hyper_profileUpdateOneRequiredWithoutHyper_reportNestedInput}),
 });
-export const hyper_reportUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportUpdateInput>, false>('hyper_reportUpdateInput').implement({
+export const hyper_reportUpdateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportUncheckedUpdateInput>, false>('hyper_reportUpdateInput').implement({
   fields: hyper_reportUpdateInputFields,
-});
-
-export const hyper_reportCreateManyInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  title: t.string({"required":true}),
-  content: t.string({"required":false}),
-  profile_id: t.string({"required":true}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-});
-export const hyper_reportCreateManyInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportCreateManyInput>, false>('hyper_reportCreateManyInput').implement({
-  fields: hyper_reportCreateManyInputFields,
 });
 
 export const hyper_reportUpdateManyMutationInputFields = (t: any) => ({
@@ -1268,27 +895,6 @@ export const Hyper_profileNullableRelationFilterFields = (t: any) => ({
 });
 export const Hyper_profileNullableRelationFilter = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.Hyper_profileNullableRelationFilter>, false>('Hyper_profileNullableRelationFilter').implement({
   fields: Hyper_profileNullableRelationFilterFields,
-});
-
-export const usersCountOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-});
-export const usersCountOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersCountOrderByAggregateInput>, false>('usersCountOrderByAggregateInput').implement({
-  fields: usersCountOrderByAggregateInputFields,
-});
-
-export const usersMaxOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-});
-export const usersMaxOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersMaxOrderByAggregateInput>, false>('usersMaxOrderByAggregateInput').implement({
-  fields: usersMaxOrderByAggregateInputFields,
-});
-
-export const usersMinOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-});
-export const usersMinOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersMinOrderByAggregateInput>, false>('usersMinOrderByAggregateInput').implement({
-  fields: usersMinOrderByAggregateInputFields,
 });
 
 export const UuidWithAggregatesFilterFields = (t: any) => ({
@@ -1351,39 +957,6 @@ export const Hyper_profileRelationFilterFields = (t: any) => ({
 });
 export const Hyper_profileRelationFilter = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.Hyper_profileRelationFilter>, false>('Hyper_profileRelationFilter').implement({
   fields: Hyper_profileRelationFilterFields,
-});
-
-export const hyper_activityCountOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  activity_type_id: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_activityCountOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityCountOrderByAggregateInput>, false>('hyper_activityCountOrderByAggregateInput').implement({
-  fields: hyper_activityCountOrderByAggregateInputFields,
-});
-
-export const hyper_activityMaxOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  activity_type_id: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_activityMaxOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityMaxOrderByAggregateInput>, false>('hyper_activityMaxOrderByAggregateInput').implement({
-  fields: hyper_activityMaxOrderByAggregateInputFields,
-});
-
-export const hyper_activityMinOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  activity_type_id: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_activityMinOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityMinOrderByAggregateInput>, false>('hyper_activityMinOrderByAggregateInput').implement({
-  fields: hyper_activityMinOrderByAggregateInputFields,
 });
 
 export const DateTimeWithAggregatesFilterFields = (t: any) => ({
@@ -1452,30 +1025,6 @@ export const hyper_activityOrderByRelationAggregateInputFields = (t: any) => ({
 });
 export const hyper_activityOrderByRelationAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityOrderByRelationAggregateInput>, false>('hyper_activityOrderByRelationAggregateInput').implement({
   fields: hyper_activityOrderByRelationAggregateInputFields,
-});
-
-export const hyper_activity_typeCountOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  name: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_activity_typeCountOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeCountOrderByAggregateInput>, false>('hyper_activity_typeCountOrderByAggregateInput').implement({
-  fields: hyper_activity_typeCountOrderByAggregateInputFields,
-});
-
-export const hyper_activity_typeMaxOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  name: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_activity_typeMaxOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeMaxOrderByAggregateInput>, false>('hyper_activity_typeMaxOrderByAggregateInput').implement({
-  fields: hyper_activity_typeMaxOrderByAggregateInputFields,
-});
-
-export const hyper_activity_typeMinOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  name: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_activity_typeMinOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeMinOrderByAggregateInput>, false>('hyper_activity_typeMinOrderByAggregateInput').implement({
-  fields: hyper_activity_typeMinOrderByAggregateInputFields,
 });
 
 export const StringWithAggregatesFilterFields = (t: any) => ({
@@ -1557,96 +1106,6 @@ export const IntFilterFields = (t: any) => ({
 });
 export const IntFilter = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.IntFilter>, false>('IntFilter').implement({
   fields: IntFilterFields,
-});
-
-export const hyper_cgm_dataCountOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  dexcom_user_id: t.field({"required":false,"type":SortOrder}),
-  record_id: t.field({"required":false,"type":SortOrder}),
-  system_time: t.field({"required":false,"type":SortOrder}),
-  display_time: t.field({"required":false,"type":SortOrder}),
-  glucose_value: t.field({"required":false,"type":SortOrder}),
-  trend: t.field({"required":false,"type":SortOrder}),
-  trend_rate: t.field({"required":false,"type":SortOrder}),
-  transmitter_id: t.field({"required":false,"type":SortOrder}),
-  transmitter_generation: t.field({"required":false,"type":SortOrder}),
-  display_device: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  transmitter_ticks: t.field({"required":false,"type":SortOrder}),
-  status: t.field({"required":false,"type":SortOrder}),
-  unit: t.field({"required":false,"type":SortOrder}),
-  rate_unit: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_cgm_dataCountOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataCountOrderByAggregateInput>, false>('hyper_cgm_dataCountOrderByAggregateInput').implement({
-  fields: hyper_cgm_dataCountOrderByAggregateInputFields,
-});
-
-export const hyper_cgm_dataAvgOrderByAggregateInputFields = (t: any) => ({
-  glucose_value: t.field({"required":false,"type":SortOrder}),
-  trend_rate: t.field({"required":false,"type":SortOrder}),
-  transmitter_ticks: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_cgm_dataAvgOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataAvgOrderByAggregateInput>, false>('hyper_cgm_dataAvgOrderByAggregateInput').implement({
-  fields: hyper_cgm_dataAvgOrderByAggregateInputFields,
-});
-
-export const hyper_cgm_dataMaxOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  dexcom_user_id: t.field({"required":false,"type":SortOrder}),
-  record_id: t.field({"required":false,"type":SortOrder}),
-  system_time: t.field({"required":false,"type":SortOrder}),
-  display_time: t.field({"required":false,"type":SortOrder}),
-  glucose_value: t.field({"required":false,"type":SortOrder}),
-  trend: t.field({"required":false,"type":SortOrder}),
-  trend_rate: t.field({"required":false,"type":SortOrder}),
-  transmitter_id: t.field({"required":false,"type":SortOrder}),
-  transmitter_generation: t.field({"required":false,"type":SortOrder}),
-  display_device: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  transmitter_ticks: t.field({"required":false,"type":SortOrder}),
-  status: t.field({"required":false,"type":SortOrder}),
-  unit: t.field({"required":false,"type":SortOrder}),
-  rate_unit: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_cgm_dataMaxOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataMaxOrderByAggregateInput>, false>('hyper_cgm_dataMaxOrderByAggregateInput').implement({
-  fields: hyper_cgm_dataMaxOrderByAggregateInputFields,
-});
-
-export const hyper_cgm_dataMinOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  dexcom_user_id: t.field({"required":false,"type":SortOrder}),
-  record_id: t.field({"required":false,"type":SortOrder}),
-  system_time: t.field({"required":false,"type":SortOrder}),
-  display_time: t.field({"required":false,"type":SortOrder}),
-  glucose_value: t.field({"required":false,"type":SortOrder}),
-  trend: t.field({"required":false,"type":SortOrder}),
-  trend_rate: t.field({"required":false,"type":SortOrder}),
-  transmitter_id: t.field({"required":false,"type":SortOrder}),
-  transmitter_generation: t.field({"required":false,"type":SortOrder}),
-  display_device: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  transmitter_ticks: t.field({"required":false,"type":SortOrder}),
-  status: t.field({"required":false,"type":SortOrder}),
-  unit: t.field({"required":false,"type":SortOrder}),
-  rate_unit: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_cgm_dataMinOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataMinOrderByAggregateInput>, false>('hyper_cgm_dataMinOrderByAggregateInput').implement({
-  fields: hyper_cgm_dataMinOrderByAggregateInputFields,
-});
-
-export const hyper_cgm_dataSumOrderByAggregateInputFields = (t: any) => ({
-  glucose_value: t.field({"required":false,"type":SortOrder}),
-  trend_rate: t.field({"required":false,"type":SortOrder}),
-  transmitter_ticks: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_cgm_dataSumOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataSumOrderByAggregateInput>, false>('hyper_cgm_dataSumOrderByAggregateInput').implement({
-  fields: hyper_cgm_dataSumOrderByAggregateInputFields,
 });
 
 export const IntNullableWithAggregatesFilterFields = (t: any) => ({
@@ -1776,80 +1235,6 @@ export const hyper_daily_recapDateProfile_idCompoundUniqueInput = builder.inputR
   fields: hyper_daily_recapDateProfile_idCompoundUniqueInputFields,
 });
 
-export const hyper_daily_recapCountOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  date: t.field({"required":false,"type":SortOrder}),
-  average_glucose: t.field({"required":false,"type":SortOrder}),
-  minimum_glucose: t.field({"required":false,"type":SortOrder}),
-  maximum_glucose: t.field({"required":false,"type":SortOrder}),
-  glucose_variability: t.field({"required":false,"type":SortOrder}),
-  time_in_ranges: t.field({"required":false,"type":SortOrder}),
-  total_readings: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  timezone: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_daily_recapCountOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapCountOrderByAggregateInput>, false>('hyper_daily_recapCountOrderByAggregateInput').implement({
-  fields: hyper_daily_recapCountOrderByAggregateInputFields,
-});
-
-export const hyper_daily_recapAvgOrderByAggregateInputFields = (t: any) => ({
-  average_glucose: t.field({"required":false,"type":SortOrder}),
-  minimum_glucose: t.field({"required":false,"type":SortOrder}),
-  maximum_glucose: t.field({"required":false,"type":SortOrder}),
-  glucose_variability: t.field({"required":false,"type":SortOrder}),
-  total_readings: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_daily_recapAvgOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapAvgOrderByAggregateInput>, false>('hyper_daily_recapAvgOrderByAggregateInput').implement({
-  fields: hyper_daily_recapAvgOrderByAggregateInputFields,
-});
-
-export const hyper_daily_recapMaxOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  date: t.field({"required":false,"type":SortOrder}),
-  average_glucose: t.field({"required":false,"type":SortOrder}),
-  minimum_glucose: t.field({"required":false,"type":SortOrder}),
-  maximum_glucose: t.field({"required":false,"type":SortOrder}),
-  glucose_variability: t.field({"required":false,"type":SortOrder}),
-  total_readings: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  timezone: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_daily_recapMaxOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapMaxOrderByAggregateInput>, false>('hyper_daily_recapMaxOrderByAggregateInput').implement({
-  fields: hyper_daily_recapMaxOrderByAggregateInputFields,
-});
-
-export const hyper_daily_recapMinOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  date: t.field({"required":false,"type":SortOrder}),
-  average_glucose: t.field({"required":false,"type":SortOrder}),
-  minimum_glucose: t.field({"required":false,"type":SortOrder}),
-  maximum_glucose: t.field({"required":false,"type":SortOrder}),
-  glucose_variability: t.field({"required":false,"type":SortOrder}),
-  total_readings: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-  timezone: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_daily_recapMinOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapMinOrderByAggregateInput>, false>('hyper_daily_recapMinOrderByAggregateInput').implement({
-  fields: hyper_daily_recapMinOrderByAggregateInputFields,
-});
-
-export const hyper_daily_recapSumOrderByAggregateInputFields = (t: any) => ({
-  average_glucose: t.field({"required":false,"type":SortOrder}),
-  minimum_glucose: t.field({"required":false,"type":SortOrder}),
-  maximum_glucose: t.field({"required":false,"type":SortOrder}),
-  glucose_variability: t.field({"required":false,"type":SortOrder}),
-  total_readings: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_daily_recapSumOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapSumOrderByAggregateInput>, false>('hyper_daily_recapSumOrderByAggregateInput').implement({
-  fields: hyper_daily_recapSumOrderByAggregateInputFields,
-});
-
 export const DecimalNullableWithAggregatesFilterFields = (t: any) => ({
   equals: t.field({"required":false,"type":Decimal}),
   in: t.field({"required":false,"type":[Decimal]}),
@@ -1889,81 +1274,6 @@ export const JsonNullableWithAggregatesFilterFields = (t: any) => ({
 });
 export const JsonNullableWithAggregatesFilter = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.JsonNullableWithAggregatesFilter>, false>('JsonNullableWithAggregatesFilter').implement({
   fields: JsonNullableWithAggregatesFilterFields,
-});
-
-export const hyper_mealCountOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  meal_time: t.field({"required":false,"type":SortOrder}),
-  carbohydrates: t.field({"required":false,"type":SortOrder}),
-  dietary_energy: t.field({"required":false,"type":SortOrder}),
-  dietary_sugar: t.field({"required":false,"type":SortOrder}),
-  fiber: t.field({"required":false,"type":SortOrder}),
-  protein: t.field({"required":false,"type":SortOrder}),
-  total_fat: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_mealCountOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealCountOrderByAggregateInput>, false>('hyper_mealCountOrderByAggregateInput').implement({
-  fields: hyper_mealCountOrderByAggregateInputFields,
-});
-
-export const hyper_mealAvgOrderByAggregateInputFields = (t: any) => ({
-  carbohydrates: t.field({"required":false,"type":SortOrder}),
-  dietary_energy: t.field({"required":false,"type":SortOrder}),
-  dietary_sugar: t.field({"required":false,"type":SortOrder}),
-  fiber: t.field({"required":false,"type":SortOrder}),
-  protein: t.field({"required":false,"type":SortOrder}),
-  total_fat: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_mealAvgOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealAvgOrderByAggregateInput>, false>('hyper_mealAvgOrderByAggregateInput').implement({
-  fields: hyper_mealAvgOrderByAggregateInputFields,
-});
-
-export const hyper_mealMaxOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  meal_time: t.field({"required":false,"type":SortOrder}),
-  carbohydrates: t.field({"required":false,"type":SortOrder}),
-  dietary_energy: t.field({"required":false,"type":SortOrder}),
-  dietary_sugar: t.field({"required":false,"type":SortOrder}),
-  fiber: t.field({"required":false,"type":SortOrder}),
-  protein: t.field({"required":false,"type":SortOrder}),
-  total_fat: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_mealMaxOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealMaxOrderByAggregateInput>, false>('hyper_mealMaxOrderByAggregateInput').implement({
-  fields: hyper_mealMaxOrderByAggregateInputFields,
-});
-
-export const hyper_mealMinOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  meal_time: t.field({"required":false,"type":SortOrder}),
-  carbohydrates: t.field({"required":false,"type":SortOrder}),
-  dietary_energy: t.field({"required":false,"type":SortOrder}),
-  dietary_sugar: t.field({"required":false,"type":SortOrder}),
-  fiber: t.field({"required":false,"type":SortOrder}),
-  protein: t.field({"required":false,"type":SortOrder}),
-  total_fat: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_mealMinOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealMinOrderByAggregateInput>, false>('hyper_mealMinOrderByAggregateInput').implement({
-  fields: hyper_mealMinOrderByAggregateInputFields,
-});
-
-export const hyper_mealSumOrderByAggregateInputFields = (t: any) => ({
-  carbohydrates: t.field({"required":false,"type":SortOrder}),
-  dietary_energy: t.field({"required":false,"type":SortOrder}),
-  dietary_sugar: t.field({"required":false,"type":SortOrder}),
-  fiber: t.field({"required":false,"type":SortOrder}),
-  protein: t.field({"required":false,"type":SortOrder}),
-  total_fat: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_mealSumOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealSumOrderByAggregateInput>, false>('hyper_mealSumOrderByAggregateInput').implement({
-  fields: hyper_mealSumOrderByAggregateInputFields,
 });
 
 export const Enumdiabetes_statusFilterFields = (t: any) => ({
@@ -2058,45 +1368,6 @@ export const hyper_reportOrderByRelationAggregateInput = builder.inputRef<Prisma
   fields: hyper_reportOrderByRelationAggregateInputFields,
 });
 
-export const hyper_profileCountOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  name: t.field({"required":false,"type":SortOrder}),
-  image: t.field({"required":false,"type":SortOrder}),
-  email: t.field({"required":false,"type":SortOrder}),
-  last_synced_time: t.field({"required":false,"type":SortOrder}),
-  diabetes_status: t.field({"required":false,"type":SortOrder}),
-  glucose_range_type: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_profileCountOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCountOrderByAggregateInput>, false>('hyper_profileCountOrderByAggregateInput').implement({
-  fields: hyper_profileCountOrderByAggregateInputFields,
-});
-
-export const hyper_profileMaxOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  name: t.field({"required":false,"type":SortOrder}),
-  image: t.field({"required":false,"type":SortOrder}),
-  email: t.field({"required":false,"type":SortOrder}),
-  last_synced_time: t.field({"required":false,"type":SortOrder}),
-  diabetes_status: t.field({"required":false,"type":SortOrder}),
-  glucose_range_type: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_profileMaxOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileMaxOrderByAggregateInput>, false>('hyper_profileMaxOrderByAggregateInput').implement({
-  fields: hyper_profileMaxOrderByAggregateInputFields,
-});
-
-export const hyper_profileMinOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  name: t.field({"required":false,"type":SortOrder}),
-  image: t.field({"required":false,"type":SortOrder}),
-  email: t.field({"required":false,"type":SortOrder}),
-  last_synced_time: t.field({"required":false,"type":SortOrder}),
-  diabetes_status: t.field({"required":false,"type":SortOrder}),
-  glucose_range_type: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_profileMinOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileMinOrderByAggregateInput>, false>('hyper_profileMinOrderByAggregateInput').implement({
-  fields: hyper_profileMinOrderByAggregateInputFields,
-});
-
 export const Enumdiabetes_statusWithAggregatesFilterFields = (t: any) => ({
   equals: t.field({"required":false,"type":diabetes_status}),
   in: t.field({"required":false,"type":[diabetes_status]}),
@@ -2123,69 +1394,11 @@ export const Enumglucose_range_typeWithAggregatesFilter = builder.inputRef<Prism
   fields: Enumglucose_range_typeWithAggregatesFilterFields,
 });
 
-export const hyper_reportCountOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  title: t.field({"required":false,"type":SortOrder}),
-  content: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_reportCountOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportCountOrderByAggregateInput>, false>('hyper_reportCountOrderByAggregateInput').implement({
-  fields: hyper_reportCountOrderByAggregateInputFields,
-});
-
-export const hyper_reportMaxOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  title: t.field({"required":false,"type":SortOrder}),
-  content: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_reportMaxOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportMaxOrderByAggregateInput>, false>('hyper_reportMaxOrderByAggregateInput').implement({
-  fields: hyper_reportMaxOrderByAggregateInputFields,
-});
-
-export const hyper_reportMinOrderByAggregateInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":SortOrder}),
-  title: t.field({"required":false,"type":SortOrder}),
-  content: t.field({"required":false,"type":SortOrder}),
-  profile_id: t.field({"required":false,"type":SortOrder}),
-  created_at: t.field({"required":false,"type":SortOrder}),
-  updatedAt: t.field({"required":false,"type":SortOrder}),
-});
-export const hyper_reportMinOrderByAggregateInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportMinOrderByAggregateInput>, false>('hyper_reportMinOrderByAggregateInput').implement({
-  fields: hyper_reportMinOrderByAggregateInputFields,
-});
-
-export const hyper_profileCreateNestedOneWithoutUsersInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutUsersInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutUsersInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-});
-export const hyper_profileCreateNestedOneWithoutUsersInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateNestedOneWithoutUsersInput>, false>('hyper_profileCreateNestedOneWithoutUsersInput').implement({
-  fields: hyper_profileCreateNestedOneWithoutUsersInputFields,
-});
-
 export const StringFieldUpdateOperationsInputFields = (t: any) => ({
   set: t.string({"required":false}),
 });
 export const StringFieldUpdateOperationsInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.StringFieldUpdateOperationsInput>, false>('StringFieldUpdateOperationsInput').implement({
   fields: StringFieldUpdateOperationsInputFields,
-});
-
-export const hyper_profileUpdateOneWithoutUsersNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutUsersInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutUsersInput}),
-  upsert: t.field({"required":false,"type":hyper_profileUpsertWithoutUsersInput}),
-  disconnect: t.field({"required":false,"type":hyper_profileWhereInput}),
-  delete: t.field({"required":false,"type":hyper_profileWhereInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-  update: t.field({"required":false,"type":hyper_profileUpdateToOneWithWhereWithoutUsersInput}),
-});
-export const hyper_profileUpdateOneWithoutUsersNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateOneWithoutUsersNestedInput>, false>('hyper_profileUpdateOneWithoutUsersNestedInput').implement({
-  fields: hyper_profileUpdateOneWithoutUsersNestedInputFields,
 });
 
 export const DateTimeFieldUpdateOperationsInputFields = (t: any) => ({
@@ -2202,28 +1415,6 @@ export const NullableDateTimeFieldUpdateOperationsInput = builder.inputRef<Prism
   fields: NullableDateTimeFieldUpdateOperationsInputFields,
 });
 
-export const hyper_activity_typeUpdateOneRequiredWithoutHyper_activityNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_activity_typeCreateWithoutHyper_activityInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_activity_typeCreateOrConnectWithoutHyper_activityInput}),
-  upsert: t.field({"required":false,"type":hyper_activity_typeUpsertWithoutHyper_activityInput}),
-  connect: t.field({"required":false,"type":hyper_activity_typeWhereUniqueInput}),
-  update: t.field({"required":false,"type":hyper_activity_typeUpdateToOneWithWhereWithoutHyper_activityInput}),
-});
-export const hyper_activity_typeUpdateOneRequiredWithoutHyper_activityNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeUpdateOneRequiredWithoutHyper_activityNestedInput>, false>('hyper_activity_typeUpdateOneRequiredWithoutHyper_activityNestedInput').implement({
-  fields: hyper_activity_typeUpdateOneRequiredWithoutHyper_activityNestedInputFields,
-});
-
-export const hyper_profileUpdateOneRequiredWithoutHyper_activityNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutHyper_activityInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutHyper_activityInput}),
-  upsert: t.field({"required":false,"type":hyper_profileUpsertWithoutHyper_activityInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-  update: t.field({"required":false,"type":hyper_profileUpdateToOneWithWhereWithoutHyper_activityInput}),
-});
-export const hyper_profileUpdateOneRequiredWithoutHyper_activityNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateOneRequiredWithoutHyper_activityNestedInput>, false>('hyper_profileUpdateOneRequiredWithoutHyper_activityNestedInput').implement({
-  fields: hyper_profileUpdateOneRequiredWithoutHyper_activityNestedInputFields,
-});
-
 export const hyper_activityCreateNestedManyWithoutHyper_activity_typeInputFields = (t: any) => ({
   connect: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
 });
@@ -2234,23 +1425,14 @@ export const hyper_activityCreateNestedManyWithoutHyper_activity_typeInput = bui
 export const hyper_activityUpdateManyWithoutHyper_activity_typeNestedInputFields = (t: any) => ({
   set: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
   disconnect: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
-  delete: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
   connect: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
-  update: t.field({"required":false,"type":[hyper_activityUpdateWithWhereUniqueWithoutHyper_activity_typeInput]}),
-  updateMany: t.field({"required":false,"type":[hyper_activityUpdateManyWithWhereWithoutHyper_activity_typeInput]}),
-  deleteMany: t.field({"required":false,"type":[hyper_activityScalarWhereInput]}),
+  // 'delete' was omitted due to `simple mode: true` found in global config
+  // 'update' was omitted due to `simple mode: true` found in global config
+  // 'updateMany' was omitted due to `simple mode: true` found in global config
+  // 'deleteMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_activityUpdateManyWithoutHyper_activity_typeNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUpdateManyWithoutHyper_activity_typeNestedInput>, false>('hyper_activityUpdateManyWithoutHyper_activity_typeNestedInput').implement({
   fields: hyper_activityUpdateManyWithoutHyper_activity_typeNestedInputFields,
-});
-
-export const hyper_profileCreateNestedOneWithoutHyper_cgm_dataInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutHyper_cgm_dataInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutHyper_cgm_dataInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-});
-export const hyper_profileCreateNestedOneWithoutHyper_cgm_dataInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateNestedOneWithoutHyper_cgm_dataInput>, false>('hyper_profileCreateNestedOneWithoutHyper_cgm_dataInput').implement({
-  fields: hyper_profileCreateNestedOneWithoutHyper_cgm_dataInputFields,
 });
 
 export const NullableIntFieldUpdateOperationsInputFields = (t: any) => ({
@@ -2293,26 +1475,6 @@ export const IntFieldUpdateOperationsInput = builder.inputRef<PrismaUpdateOperat
   fields: IntFieldUpdateOperationsInputFields,
 });
 
-export const hyper_profileUpdateOneRequiredWithoutHyper_cgm_dataNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutHyper_cgm_dataInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutHyper_cgm_dataInput}),
-  upsert: t.field({"required":false,"type":hyper_profileUpsertWithoutHyper_cgm_dataInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-  update: t.field({"required":false,"type":hyper_profileUpdateToOneWithWhereWithoutHyper_cgm_dataInput}),
-});
-export const hyper_profileUpdateOneRequiredWithoutHyper_cgm_dataNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateOneRequiredWithoutHyper_cgm_dataNestedInput>, false>('hyper_profileUpdateOneRequiredWithoutHyper_cgm_dataNestedInput').implement({
-  fields: hyper_profileUpdateOneRequiredWithoutHyper_cgm_dataNestedInputFields,
-});
-
-export const hyper_profileCreateNestedOneWithoutHyper_daily_recapInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutHyper_daily_recapInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutHyper_daily_recapInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-});
-export const hyper_profileCreateNestedOneWithoutHyper_daily_recapInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateNestedOneWithoutHyper_daily_recapInput>, false>('hyper_profileCreateNestedOneWithoutHyper_daily_recapInput').implement({
-  fields: hyper_profileCreateNestedOneWithoutHyper_daily_recapInputFields,
-});
-
 export const NullableDecimalFieldUpdateOperationsInputFields = (t: any) => ({
   set: t.field({"required":false,"type":Decimal}),
   increment: t.field({"required":false,"type":Decimal}),
@@ -2324,37 +1486,6 @@ export const NullableDecimalFieldUpdateOperationsInput = builder.inputRef<Prisma
   fields: NullableDecimalFieldUpdateOperationsInputFields,
 });
 
-export const hyper_profileUpdateOneRequiredWithoutHyper_daily_recapNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutHyper_daily_recapInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutHyper_daily_recapInput}),
-  upsert: t.field({"required":false,"type":hyper_profileUpsertWithoutHyper_daily_recapInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-  update: t.field({"required":false,"type":hyper_profileUpdateToOneWithWhereWithoutHyper_daily_recapInput}),
-});
-export const hyper_profileUpdateOneRequiredWithoutHyper_daily_recapNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateOneRequiredWithoutHyper_daily_recapNestedInput>, false>('hyper_profileUpdateOneRequiredWithoutHyper_daily_recapNestedInput').implement({
-  fields: hyper_profileUpdateOneRequiredWithoutHyper_daily_recapNestedInputFields,
-});
-
-export const hyper_profileCreateNestedOneWithoutHyper_mealInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutHyper_mealInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutHyper_mealInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-});
-export const hyper_profileCreateNestedOneWithoutHyper_mealInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateNestedOneWithoutHyper_mealInput>, false>('hyper_profileCreateNestedOneWithoutHyper_mealInput').implement({
-  fields: hyper_profileCreateNestedOneWithoutHyper_mealInputFields,
-});
-
-export const hyper_profileUpdateOneRequiredWithoutHyper_mealNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutHyper_mealInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutHyper_mealInput}),
-  upsert: t.field({"required":false,"type":hyper_profileUpsertWithoutHyper_mealInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-  update: t.field({"required":false,"type":hyper_profileUpdateToOneWithWhereWithoutHyper_mealInput}),
-});
-export const hyper_profileUpdateOneRequiredWithoutHyper_mealNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateOneRequiredWithoutHyper_mealNestedInput>, false>('hyper_profileUpdateOneRequiredWithoutHyper_mealNestedInput').implement({
-  fields: hyper_profileUpdateOneRequiredWithoutHyper_mealNestedInputFields,
-});
-
 export const hyper_activityCreateNestedManyWithoutHyper_profileInputFields = (t: any) => ({
   connect: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
 });
@@ -2363,49 +1494,40 @@ export const hyper_activityCreateNestedManyWithoutHyper_profileInput = builder.i
 });
 
 export const hyper_cgm_dataCreateNestedManyWithoutHyper_profileInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":[hyper_cgm_dataCreateWithoutHyper_profileInput]}),
-  connectOrCreate: t.field({"required":false,"type":[hyper_cgm_dataCreateOrConnectWithoutHyper_profileInput]}),
-  createMany: t.field({"required":false,"type":hyper_cgm_dataCreateManyHyper_profileInputEnvelope}),
   connect: t.field({"required":false,"type":[hyper_cgm_dataWhereUniqueInput]}),
+  // 'create' was omitted due to `simple mode: true` found in global config
+  // 'connectOrCreate' was omitted due to `simple mode: true` found in global config
+  // 'createMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_cgm_dataCreateNestedManyWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataCreateNestedManyWithoutHyper_profileInput>, false>('hyper_cgm_dataCreateNestedManyWithoutHyper_profileInput').implement({
   fields: hyper_cgm_dataCreateNestedManyWithoutHyper_profileInputFields,
 });
 
 export const hyper_daily_recapCreateNestedManyWithoutHyper_profileInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":[hyper_daily_recapCreateWithoutHyper_profileInput]}),
-  connectOrCreate: t.field({"required":false,"type":[hyper_daily_recapCreateOrConnectWithoutHyper_profileInput]}),
-  createMany: t.field({"required":false,"type":hyper_daily_recapCreateManyHyper_profileInputEnvelope}),
   connect: t.field({"required":false,"type":[hyper_daily_recapWhereUniqueInput]}),
+  // 'create' was omitted due to `simple mode: true` found in global config
+  // 'connectOrCreate' was omitted due to `simple mode: true` found in global config
+  // 'createMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_daily_recapCreateNestedManyWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapCreateNestedManyWithoutHyper_profileInput>, false>('hyper_daily_recapCreateNestedManyWithoutHyper_profileInput').implement({
   fields: hyper_daily_recapCreateNestedManyWithoutHyper_profileInputFields,
 });
 
 export const hyper_mealCreateNestedManyWithoutHyper_profileInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":[hyper_mealCreateWithoutHyper_profileInput]}),
-  connectOrCreate: t.field({"required":false,"type":[hyper_mealCreateOrConnectWithoutHyper_profileInput]}),
-  createMany: t.field({"required":false,"type":hyper_mealCreateManyHyper_profileInputEnvelope}),
   connect: t.field({"required":false,"type":[hyper_mealWhereUniqueInput]}),
+  // 'create' was omitted due to `simple mode: true` found in global config
+  // 'connectOrCreate' was omitted due to `simple mode: true` found in global config
+  // 'createMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_mealCreateNestedManyWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealCreateNestedManyWithoutHyper_profileInput>, false>('hyper_mealCreateNestedManyWithoutHyper_profileInput').implement({
   fields: hyper_mealCreateNestedManyWithoutHyper_profileInputFields,
 });
 
-export const usersCreateNestedOneWithoutHyper_profileInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":usersCreateWithoutHyper_profileInput}),
-  connectOrCreate: t.field({"required":false,"type":usersCreateOrConnectWithoutHyper_profileInput}),
-  connect: t.field({"required":false,"type":usersWhereUniqueInput}),
-});
-export const usersCreateNestedOneWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersCreateNestedOneWithoutHyper_profileInput>, false>('usersCreateNestedOneWithoutHyper_profileInput').implement({
-  fields: usersCreateNestedOneWithoutHyper_profileInputFields,
-});
-
 export const hyper_reportCreateNestedManyWithoutHyper_profileInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":[hyper_reportCreateWithoutHyper_profileInput]}),
-  connectOrCreate: t.field({"required":false,"type":[hyper_reportCreateOrConnectWithoutHyper_profileInput]}),
-  createMany: t.field({"required":false,"type":hyper_reportCreateManyHyper_profileInputEnvelope}),
   connect: t.field({"required":false,"type":[hyper_reportWhereUniqueInput]}),
+  // 'create' was omitted due to `simple mode: true` found in global config
+  // 'connectOrCreate' was omitted due to `simple mode: true` found in global config
+  // 'createMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_reportCreateNestedManyWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportCreateNestedManyWithoutHyper_profileInput>, false>('hyper_reportCreateNestedManyWithoutHyper_profileInput').implement({
   fields: hyper_reportCreateNestedManyWithoutHyper_profileInputFields,
@@ -2428,113 +1550,82 @@ export const Enumglucose_range_typeFieldUpdateOperationsInput = builder.inputRef
 export const hyper_activityUpdateManyWithoutHyper_profileNestedInputFields = (t: any) => ({
   set: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
   disconnect: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
-  delete: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
   connect: t.field({"required":false,"type":[hyper_activityWhereUniqueInput]}),
-  update: t.field({"required":false,"type":[hyper_activityUpdateWithWhereUniqueWithoutHyper_profileInput]}),
-  updateMany: t.field({"required":false,"type":[hyper_activityUpdateManyWithWhereWithoutHyper_profileInput]}),
-  deleteMany: t.field({"required":false,"type":[hyper_activityScalarWhereInput]}),
+  // 'delete' was omitted due to `simple mode: true` found in global config
+  // 'update' was omitted due to `simple mode: true` found in global config
+  // 'updateMany' was omitted due to `simple mode: true` found in global config
+  // 'deleteMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_activityUpdateManyWithoutHyper_profileNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUpdateManyWithoutHyper_profileNestedInput>, false>('hyper_activityUpdateManyWithoutHyper_profileNestedInput').implement({
   fields: hyper_activityUpdateManyWithoutHyper_profileNestedInputFields,
 });
 
 export const hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":[hyper_cgm_dataCreateWithoutHyper_profileInput]}),
-  connectOrCreate: t.field({"required":false,"type":[hyper_cgm_dataCreateOrConnectWithoutHyper_profileInput]}),
-  upsert: t.field({"required":false,"type":[hyper_cgm_dataUpsertWithWhereUniqueWithoutHyper_profileInput]}),
-  createMany: t.field({"required":false,"type":hyper_cgm_dataCreateManyHyper_profileInputEnvelope}),
   set: t.field({"required":false,"type":[hyper_cgm_dataWhereUniqueInput]}),
   disconnect: t.field({"required":false,"type":[hyper_cgm_dataWhereUniqueInput]}),
-  delete: t.field({"required":false,"type":[hyper_cgm_dataWhereUniqueInput]}),
   connect: t.field({"required":false,"type":[hyper_cgm_dataWhereUniqueInput]}),
-  update: t.field({"required":false,"type":[hyper_cgm_dataUpdateWithWhereUniqueWithoutHyper_profileInput]}),
-  updateMany: t.field({"required":false,"type":[hyper_cgm_dataUpdateManyWithWhereWithoutHyper_profileInput]}),
-  deleteMany: t.field({"required":false,"type":[hyper_cgm_dataScalarWhereInput]}),
+  // 'create' was omitted due to `simple mode: true` found in global config
+  // 'connectOrCreate' was omitted due to `simple mode: true` found in global config
+  // 'upsert' was omitted due to `simple mode: true` found in global config
+  // 'createMany' was omitted due to `simple mode: true` found in global config
+  // 'delete' was omitted due to `simple mode: true` found in global config
+  // 'update' was omitted due to `simple mode: true` found in global config
+  // 'updateMany' was omitted due to `simple mode: true` found in global config
+  // 'deleteMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInput>, false>('hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInput').implement({
   fields: hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInputFields,
 });
 
 export const hyper_daily_recapUpdateManyWithoutHyper_profileNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":[hyper_daily_recapCreateWithoutHyper_profileInput]}),
-  connectOrCreate: t.field({"required":false,"type":[hyper_daily_recapCreateOrConnectWithoutHyper_profileInput]}),
-  upsert: t.field({"required":false,"type":[hyper_daily_recapUpsertWithWhereUniqueWithoutHyper_profileInput]}),
-  createMany: t.field({"required":false,"type":hyper_daily_recapCreateManyHyper_profileInputEnvelope}),
   set: t.field({"required":false,"type":[hyper_daily_recapWhereUniqueInput]}),
   disconnect: t.field({"required":false,"type":[hyper_daily_recapWhereUniqueInput]}),
-  delete: t.field({"required":false,"type":[hyper_daily_recapWhereUniqueInput]}),
   connect: t.field({"required":false,"type":[hyper_daily_recapWhereUniqueInput]}),
-  update: t.field({"required":false,"type":[hyper_daily_recapUpdateWithWhereUniqueWithoutHyper_profileInput]}),
-  updateMany: t.field({"required":false,"type":[hyper_daily_recapUpdateManyWithWhereWithoutHyper_profileInput]}),
-  deleteMany: t.field({"required":false,"type":[hyper_daily_recapScalarWhereInput]}),
+  // 'create' was omitted due to `simple mode: true` found in global config
+  // 'connectOrCreate' was omitted due to `simple mode: true` found in global config
+  // 'upsert' was omitted due to `simple mode: true` found in global config
+  // 'createMany' was omitted due to `simple mode: true` found in global config
+  // 'delete' was omitted due to `simple mode: true` found in global config
+  // 'update' was omitted due to `simple mode: true` found in global config
+  // 'updateMany' was omitted due to `simple mode: true` found in global config
+  // 'deleteMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_daily_recapUpdateManyWithoutHyper_profileNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapUpdateManyWithoutHyper_profileNestedInput>, false>('hyper_daily_recapUpdateManyWithoutHyper_profileNestedInput').implement({
   fields: hyper_daily_recapUpdateManyWithoutHyper_profileNestedInputFields,
 });
 
 export const hyper_mealUpdateManyWithoutHyper_profileNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":[hyper_mealCreateWithoutHyper_profileInput]}),
-  connectOrCreate: t.field({"required":false,"type":[hyper_mealCreateOrConnectWithoutHyper_profileInput]}),
-  upsert: t.field({"required":false,"type":[hyper_mealUpsertWithWhereUniqueWithoutHyper_profileInput]}),
-  createMany: t.field({"required":false,"type":hyper_mealCreateManyHyper_profileInputEnvelope}),
   set: t.field({"required":false,"type":[hyper_mealWhereUniqueInput]}),
   disconnect: t.field({"required":false,"type":[hyper_mealWhereUniqueInput]}),
-  delete: t.field({"required":false,"type":[hyper_mealWhereUniqueInput]}),
   connect: t.field({"required":false,"type":[hyper_mealWhereUniqueInput]}),
-  update: t.field({"required":false,"type":[hyper_mealUpdateWithWhereUniqueWithoutHyper_profileInput]}),
-  updateMany: t.field({"required":false,"type":[hyper_mealUpdateManyWithWhereWithoutHyper_profileInput]}),
-  deleteMany: t.field({"required":false,"type":[hyper_mealScalarWhereInput]}),
+  // 'create' was omitted due to `simple mode: true` found in global config
+  // 'connectOrCreate' was omitted due to `simple mode: true` found in global config
+  // 'upsert' was omitted due to `simple mode: true` found in global config
+  // 'createMany' was omitted due to `simple mode: true` found in global config
+  // 'delete' was omitted due to `simple mode: true` found in global config
+  // 'update' was omitted due to `simple mode: true` found in global config
+  // 'updateMany' was omitted due to `simple mode: true` found in global config
+  // 'deleteMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_mealUpdateManyWithoutHyper_profileNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealUpdateManyWithoutHyper_profileNestedInput>, false>('hyper_mealUpdateManyWithoutHyper_profileNestedInput').implement({
   fields: hyper_mealUpdateManyWithoutHyper_profileNestedInputFields,
 });
 
-export const usersUpdateOneRequiredWithoutHyper_profileNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":usersCreateWithoutHyper_profileInput}),
-  connectOrCreate: t.field({"required":false,"type":usersCreateOrConnectWithoutHyper_profileInput}),
-  upsert: t.field({"required":false,"type":usersUpsertWithoutHyper_profileInput}),
-  connect: t.field({"required":false,"type":usersWhereUniqueInput}),
-  update: t.field({"required":false,"type":usersUpdateToOneWithWhereWithoutHyper_profileInput}),
-});
-export const usersUpdateOneRequiredWithoutHyper_profileNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersUpdateOneRequiredWithoutHyper_profileNestedInput>, false>('usersUpdateOneRequiredWithoutHyper_profileNestedInput').implement({
-  fields: usersUpdateOneRequiredWithoutHyper_profileNestedInputFields,
-});
-
 export const hyper_reportUpdateManyWithoutHyper_profileNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":[hyper_reportCreateWithoutHyper_profileInput]}),
-  connectOrCreate: t.field({"required":false,"type":[hyper_reportCreateOrConnectWithoutHyper_profileInput]}),
-  upsert: t.field({"required":false,"type":[hyper_reportUpsertWithWhereUniqueWithoutHyper_profileInput]}),
-  createMany: t.field({"required":false,"type":hyper_reportCreateManyHyper_profileInputEnvelope}),
   set: t.field({"required":false,"type":[hyper_reportWhereUniqueInput]}),
   disconnect: t.field({"required":false,"type":[hyper_reportWhereUniqueInput]}),
-  delete: t.field({"required":false,"type":[hyper_reportWhereUniqueInput]}),
   connect: t.field({"required":false,"type":[hyper_reportWhereUniqueInput]}),
-  update: t.field({"required":false,"type":[hyper_reportUpdateWithWhereUniqueWithoutHyper_profileInput]}),
-  updateMany: t.field({"required":false,"type":[hyper_reportUpdateManyWithWhereWithoutHyper_profileInput]}),
-  deleteMany: t.field({"required":false,"type":[hyper_reportScalarWhereInput]}),
+  // 'create' was omitted due to `simple mode: true` found in global config
+  // 'connectOrCreate' was omitted due to `simple mode: true` found in global config
+  // 'upsert' was omitted due to `simple mode: true` found in global config
+  // 'createMany' was omitted due to `simple mode: true` found in global config
+  // 'delete' was omitted due to `simple mode: true` found in global config
+  // 'update' was omitted due to `simple mode: true` found in global config
+  // 'updateMany' was omitted due to `simple mode: true` found in global config
+  // 'deleteMany' was omitted due to `simple mode: true` found in global config
 });
 export const hyper_reportUpdateManyWithoutHyper_profileNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportUpdateManyWithoutHyper_profileNestedInput>, false>('hyper_reportUpdateManyWithoutHyper_profileNestedInput').implement({
   fields: hyper_reportUpdateManyWithoutHyper_profileNestedInputFields,
-});
-
-export const hyper_profileCreateNestedOneWithoutHyper_reportInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutHyper_reportInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutHyper_reportInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-});
-export const hyper_profileCreateNestedOneWithoutHyper_reportInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateNestedOneWithoutHyper_reportInput>, false>('hyper_profileCreateNestedOneWithoutHyper_reportInput').implement({
-  fields: hyper_profileCreateNestedOneWithoutHyper_reportInputFields,
-});
-
-export const hyper_profileUpdateOneRequiredWithoutHyper_reportNestedInputFields = (t: any) => ({
-  create: t.field({"required":false,"type":hyper_profileCreateWithoutHyper_reportInput}),
-  connectOrCreate: t.field({"required":false,"type":hyper_profileCreateOrConnectWithoutHyper_reportInput}),
-  upsert: t.field({"required":false,"type":hyper_profileUpsertWithoutHyper_reportInput}),
-  connect: t.field({"required":false,"type":hyper_profileWhereUniqueInput}),
-  update: t.field({"required":false,"type":hyper_profileUpdateToOneWithWhereWithoutHyper_reportInput}),
-});
-export const hyper_profileUpdateOneRequiredWithoutHyper_reportNestedInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateOneRequiredWithoutHyper_reportNestedInput>, false>('hyper_profileUpdateOneRequiredWithoutHyper_reportNestedInput').implement({
-  fields: hyper_profileUpdateOneRequiredWithoutHyper_reportNestedInputFields,
 });
 
 export const NestedUuidFilterFields = (t: any) => ({
@@ -2913,952 +2004,4 @@ export const NestedEnumglucose_range_typeWithAggregatesFilterFields = (t: any) =
 });
 export const NestedEnumglucose_range_typeWithAggregatesFilter = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.NestedEnumglucose_range_typeWithAggregatesFilter>, false>('NestedEnumglucose_range_typeWithAggregatesFilter').implement({
   fields: NestedEnumglucose_range_typeWithAggregatesFilterFields,
-});
-
-export const hyper_profileCreateWithoutUsersInputFields = (t: any) => ({
-  name: t.string({"required":true}),
-  image: t.string({"required":false}),
-  email: t.string({"required":false}),
-  last_synced_time: t.field({"required":false,"type":DateTime}),
-  diabetes_status: t.field({"required":false,"type":diabetes_status}),
-  glucose_range_type: t.field({"required":false,"type":glucose_range_type}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityCreateNestedManyWithoutHyper_profileInput}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataCreateNestedManyWithoutHyper_profileInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapCreateNestedManyWithoutHyper_profileInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealCreateNestedManyWithoutHyper_profileInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportCreateNestedManyWithoutHyper_profileInput}),
-});
-export const hyper_profileCreateWithoutUsersInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateWithoutUsersInput>, false>('hyper_profileCreateWithoutUsersInput').implement({
-  fields: hyper_profileCreateWithoutUsersInputFields,
-});
-
-export const hyper_profileCreateOrConnectWithoutUsersInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_profileWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutUsersInput}),
-});
-export const hyper_profileCreateOrConnectWithoutUsersInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateOrConnectWithoutUsersInput>, false>('hyper_profileCreateOrConnectWithoutUsersInput').implement({
-  fields: hyper_profileCreateOrConnectWithoutUsersInputFields,
-});
-
-export const hyper_profileUpsertWithoutUsersInputFields = (t: any) => ({
-  update: t.field({"required":true,"type":hyper_profileUpdateWithoutUsersInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutUsersInput}),
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-});
-export const hyper_profileUpsertWithoutUsersInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpsertWithoutUsersInput>, false>('hyper_profileUpsertWithoutUsersInput').implement({
-  fields: hyper_profileUpsertWithoutUsersInputFields,
-});
-
-export const hyper_profileUpdateToOneWithWhereWithoutUsersInputFields = (t: any) => ({
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-  data: t.field({"required":true,"type":hyper_profileUpdateWithoutUsersInput}),
-});
-export const hyper_profileUpdateToOneWithWhereWithoutUsersInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateToOneWithWhereWithoutUsersInput>, false>('hyper_profileUpdateToOneWithWhereWithoutUsersInput').implement({
-  fields: hyper_profileUpdateToOneWithWhereWithoutUsersInputFields,
-});
-
-export const hyper_profileUpdateWithoutUsersInputFields = (t: any) => ({
-  name: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  image: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  email: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  last_synced_time: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  diabetes_status: t.field({"required":false,"type":Enumdiabetes_statusFieldUpdateOperationsInput}),
-  glucose_range_type: t.field({"required":false,"type":Enumglucose_range_typeFieldUpdateOperationsInput}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportUpdateManyWithoutHyper_profileNestedInput}),
-});
-export const hyper_profileUpdateWithoutUsersInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateWithoutUsersInput>, false>('hyper_profileUpdateWithoutUsersInput').implement({
-  fields: hyper_profileUpdateWithoutUsersInputFields,
-});
-
-export const hyper_activity_typeCreateWithoutHyper_activityInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  name: t.string({"required":true}),
-});
-export const hyper_activity_typeCreateWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeCreateWithoutHyper_activityInput>, false>('hyper_activity_typeCreateWithoutHyper_activityInput').implement({
-  fields: hyper_activity_typeCreateWithoutHyper_activityInputFields,
-});
-
-export const hyper_activity_typeCreateOrConnectWithoutHyper_activityInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_activity_typeWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_activity_typeCreateWithoutHyper_activityInput}),
-});
-export const hyper_activity_typeCreateOrConnectWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeCreateOrConnectWithoutHyper_activityInput>, false>('hyper_activity_typeCreateOrConnectWithoutHyper_activityInput').implement({
-  fields: hyper_activity_typeCreateOrConnectWithoutHyper_activityInputFields,
-});
-
-export const hyper_activity_typeUpsertWithoutHyper_activityInputFields = (t: any) => ({
-  update: t.field({"required":true,"type":hyper_activity_typeUpdateWithoutHyper_activityInput}),
-  create: t.field({"required":true,"type":hyper_activity_typeCreateWithoutHyper_activityInput}),
-  where: t.field({"required":false,"type":hyper_activity_typeWhereInput}),
-});
-export const hyper_activity_typeUpsertWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeUpsertWithoutHyper_activityInput>, false>('hyper_activity_typeUpsertWithoutHyper_activityInput').implement({
-  fields: hyper_activity_typeUpsertWithoutHyper_activityInputFields,
-});
-
-export const hyper_activity_typeUpdateToOneWithWhereWithoutHyper_activityInputFields = (t: any) => ({
-  where: t.field({"required":false,"type":hyper_activity_typeWhereInput}),
-  data: t.field({"required":true,"type":hyper_activity_typeUpdateWithoutHyper_activityInput}),
-});
-export const hyper_activity_typeUpdateToOneWithWhereWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeUpdateToOneWithWhereWithoutHyper_activityInput>, false>('hyper_activity_typeUpdateToOneWithWhereWithoutHyper_activityInput').implement({
-  fields: hyper_activity_typeUpdateToOneWithWhereWithoutHyper_activityInputFields,
-});
-
-export const hyper_activity_typeUpdateWithoutHyper_activityInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  name: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-});
-export const hyper_activity_typeUpdateWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activity_typeUpdateWithoutHyper_activityInput>, false>('hyper_activity_typeUpdateWithoutHyper_activityInput').implement({
-  fields: hyper_activity_typeUpdateWithoutHyper_activityInputFields,
-});
-
-export const hyper_profileCreateWithoutHyper_activityInputFields = (t: any) => ({
-  name: t.string({"required":true}),
-  image: t.string({"required":false}),
-  email: t.string({"required":false}),
-  last_synced_time: t.field({"required":false,"type":DateTime}),
-  diabetes_status: t.field({"required":false,"type":diabetes_status}),
-  glucose_range_type: t.field({"required":false,"type":glucose_range_type}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataCreateNestedManyWithoutHyper_profileInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapCreateNestedManyWithoutHyper_profileInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealCreateNestedManyWithoutHyper_profileInput}),
-  users: t.field({"required":true,"type":usersCreateNestedOneWithoutHyper_profileInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportCreateNestedManyWithoutHyper_profileInput}),
-});
-export const hyper_profileCreateWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateWithoutHyper_activityInput>, false>('hyper_profileCreateWithoutHyper_activityInput').implement({
-  fields: hyper_profileCreateWithoutHyper_activityInputFields,
-});
-
-export const hyper_profileCreateOrConnectWithoutHyper_activityInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_profileWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_activityInput}),
-});
-export const hyper_profileCreateOrConnectWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateOrConnectWithoutHyper_activityInput>, false>('hyper_profileCreateOrConnectWithoutHyper_activityInput').implement({
-  fields: hyper_profileCreateOrConnectWithoutHyper_activityInputFields,
-});
-
-export const hyper_profileUpsertWithoutHyper_activityInputFields = (t: any) => ({
-  update: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_activityInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_activityInput}),
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-});
-export const hyper_profileUpsertWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpsertWithoutHyper_activityInput>, false>('hyper_profileUpsertWithoutHyper_activityInput').implement({
-  fields: hyper_profileUpsertWithoutHyper_activityInputFields,
-});
-
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_activityInputFields = (t: any) => ({
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-  data: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_activityInput}),
-});
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateToOneWithWhereWithoutHyper_activityInput>, false>('hyper_profileUpdateToOneWithWhereWithoutHyper_activityInput').implement({
-  fields: hyper_profileUpdateToOneWithWhereWithoutHyper_activityInputFields,
-});
-
-export const hyper_profileUpdateWithoutHyper_activityInputFields = (t: any) => ({
-  name: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  image: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  email: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  last_synced_time: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  diabetes_status: t.field({"required":false,"type":Enumdiabetes_statusFieldUpdateOperationsInput}),
-  glucose_range_type: t.field({"required":false,"type":Enumglucose_range_typeFieldUpdateOperationsInput}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealUpdateManyWithoutHyper_profileNestedInput}),
-  users: t.field({"required":false,"type":usersUpdateOneRequiredWithoutHyper_profileNestedInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportUpdateManyWithoutHyper_profileNestedInput}),
-});
-export const hyper_profileUpdateWithoutHyper_activityInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateWithoutHyper_activityInput>, false>('hyper_profileUpdateWithoutHyper_activityInput').implement({
-  fields: hyper_profileUpdateWithoutHyper_activityInputFields,
-});
-
-export const hyper_activityUpdateWithWhereUniqueWithoutHyper_activity_typeInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_activityWhereUniqueInput}),
-  data: t.field({"required":true,"type":hyper_activityUpdateWithoutHyper_activity_typeInput}),
-});
-export const hyper_activityUpdateWithWhereUniqueWithoutHyper_activity_typeInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUpdateWithWhereUniqueWithoutHyper_activity_typeInput>, false>('hyper_activityUpdateWithWhereUniqueWithoutHyper_activity_typeInput').implement({
-  fields: hyper_activityUpdateWithWhereUniqueWithoutHyper_activity_typeInputFields,
-});
-
-export const hyper_activityUpdateManyWithWhereWithoutHyper_activity_typeInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_activityScalarWhereInput}),
-  data: t.field({"required":true,"type":hyper_activityUpdateManyMutationInput}),
-});
-export const hyper_activityUpdateManyWithWhereWithoutHyper_activity_typeInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUpdateManyWithWhereWithoutHyper_activity_typeInput>, false>('hyper_activityUpdateManyWithWhereWithoutHyper_activity_typeInput').implement({
-  fields: hyper_activityUpdateManyWithWhereWithoutHyper_activity_typeInputFields,
-});
-
-export const hyper_activityScalarWhereInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_activityScalarWhereInput]}),
-  OR: t.field({"required":false,"type":[hyper_activityScalarWhereInput]}),
-  NOT: t.field({"required":false,"type":[hyper_activityScalarWhereInput]}),
-  id: t.field({"required":false,"type":UuidFilter}),
-  activity_type_id: t.field({"required":false,"type":UuidFilter}),
-  profile_id: t.field({"required":false,"type":UuidFilter}),
-  created_at: t.field({"required":false,"type":DateTimeFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableFilter}),
-});
-export const hyper_activityScalarWhereInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityScalarWhereInput>, false>('hyper_activityScalarWhereInput').implement({
-  fields: hyper_activityScalarWhereInputFields,
-});
-
-export const hyper_profileCreateWithoutHyper_cgm_dataInputFields = (t: any) => ({
-  name: t.string({"required":true}),
-  image: t.string({"required":false}),
-  email: t.string({"required":false}),
-  last_synced_time: t.field({"required":false,"type":DateTime}),
-  diabetes_status: t.field({"required":false,"type":diabetes_status}),
-  glucose_range_type: t.field({"required":false,"type":glucose_range_type}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityCreateNestedManyWithoutHyper_profileInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapCreateNestedManyWithoutHyper_profileInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealCreateNestedManyWithoutHyper_profileInput}),
-  users: t.field({"required":true,"type":usersCreateNestedOneWithoutHyper_profileInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportCreateNestedManyWithoutHyper_profileInput}),
-});
-export const hyper_profileCreateWithoutHyper_cgm_dataInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateWithoutHyper_cgm_dataInput>, false>('hyper_profileCreateWithoutHyper_cgm_dataInput').implement({
-  fields: hyper_profileCreateWithoutHyper_cgm_dataInputFields,
-});
-
-export const hyper_profileCreateOrConnectWithoutHyper_cgm_dataInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_profileWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_cgm_dataInput}),
-});
-export const hyper_profileCreateOrConnectWithoutHyper_cgm_dataInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateOrConnectWithoutHyper_cgm_dataInput>, false>('hyper_profileCreateOrConnectWithoutHyper_cgm_dataInput').implement({
-  fields: hyper_profileCreateOrConnectWithoutHyper_cgm_dataInputFields,
-});
-
-export const hyper_profileUpsertWithoutHyper_cgm_dataInputFields = (t: any) => ({
-  update: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_cgm_dataInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_cgm_dataInput}),
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-});
-export const hyper_profileUpsertWithoutHyper_cgm_dataInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpsertWithoutHyper_cgm_dataInput>, false>('hyper_profileUpsertWithoutHyper_cgm_dataInput').implement({
-  fields: hyper_profileUpsertWithoutHyper_cgm_dataInputFields,
-});
-
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_cgm_dataInputFields = (t: any) => ({
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-  data: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_cgm_dataInput}),
-});
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_cgm_dataInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateToOneWithWhereWithoutHyper_cgm_dataInput>, false>('hyper_profileUpdateToOneWithWhereWithoutHyper_cgm_dataInput').implement({
-  fields: hyper_profileUpdateToOneWithWhereWithoutHyper_cgm_dataInputFields,
-});
-
-export const hyper_profileUpdateWithoutHyper_cgm_dataInputFields = (t: any) => ({
-  name: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  image: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  email: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  last_synced_time: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  diabetes_status: t.field({"required":false,"type":Enumdiabetes_statusFieldUpdateOperationsInput}),
-  glucose_range_type: t.field({"required":false,"type":Enumglucose_range_typeFieldUpdateOperationsInput}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealUpdateManyWithoutHyper_profileNestedInput}),
-  users: t.field({"required":false,"type":usersUpdateOneRequiredWithoutHyper_profileNestedInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportUpdateManyWithoutHyper_profileNestedInput}),
-});
-export const hyper_profileUpdateWithoutHyper_cgm_dataInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateWithoutHyper_cgm_dataInput>, false>('hyper_profileUpdateWithoutHyper_cgm_dataInput').implement({
-  fields: hyper_profileUpdateWithoutHyper_cgm_dataInputFields,
-});
-
-export const hyper_profileCreateWithoutHyper_daily_recapInputFields = (t: any) => ({
-  name: t.string({"required":true}),
-  image: t.string({"required":false}),
-  email: t.string({"required":false}),
-  last_synced_time: t.field({"required":false,"type":DateTime}),
-  diabetes_status: t.field({"required":false,"type":diabetes_status}),
-  glucose_range_type: t.field({"required":false,"type":glucose_range_type}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityCreateNestedManyWithoutHyper_profileInput}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataCreateNestedManyWithoutHyper_profileInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealCreateNestedManyWithoutHyper_profileInput}),
-  users: t.field({"required":true,"type":usersCreateNestedOneWithoutHyper_profileInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportCreateNestedManyWithoutHyper_profileInput}),
-});
-export const hyper_profileCreateWithoutHyper_daily_recapInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateWithoutHyper_daily_recapInput>, false>('hyper_profileCreateWithoutHyper_daily_recapInput').implement({
-  fields: hyper_profileCreateWithoutHyper_daily_recapInputFields,
-});
-
-export const hyper_profileCreateOrConnectWithoutHyper_daily_recapInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_profileWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_daily_recapInput}),
-});
-export const hyper_profileCreateOrConnectWithoutHyper_daily_recapInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateOrConnectWithoutHyper_daily_recapInput>, false>('hyper_profileCreateOrConnectWithoutHyper_daily_recapInput').implement({
-  fields: hyper_profileCreateOrConnectWithoutHyper_daily_recapInputFields,
-});
-
-export const hyper_profileUpsertWithoutHyper_daily_recapInputFields = (t: any) => ({
-  update: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_daily_recapInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_daily_recapInput}),
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-});
-export const hyper_profileUpsertWithoutHyper_daily_recapInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpsertWithoutHyper_daily_recapInput>, false>('hyper_profileUpsertWithoutHyper_daily_recapInput').implement({
-  fields: hyper_profileUpsertWithoutHyper_daily_recapInputFields,
-});
-
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_daily_recapInputFields = (t: any) => ({
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-  data: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_daily_recapInput}),
-});
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_daily_recapInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateToOneWithWhereWithoutHyper_daily_recapInput>, false>('hyper_profileUpdateToOneWithWhereWithoutHyper_daily_recapInput').implement({
-  fields: hyper_profileUpdateToOneWithWhereWithoutHyper_daily_recapInputFields,
-});
-
-export const hyper_profileUpdateWithoutHyper_daily_recapInputFields = (t: any) => ({
-  name: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  image: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  email: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  last_synced_time: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  diabetes_status: t.field({"required":false,"type":Enumdiabetes_statusFieldUpdateOperationsInput}),
-  glucose_range_type: t.field({"required":false,"type":Enumglucose_range_typeFieldUpdateOperationsInput}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealUpdateManyWithoutHyper_profileNestedInput}),
-  users: t.field({"required":false,"type":usersUpdateOneRequiredWithoutHyper_profileNestedInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportUpdateManyWithoutHyper_profileNestedInput}),
-});
-export const hyper_profileUpdateWithoutHyper_daily_recapInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateWithoutHyper_daily_recapInput>, false>('hyper_profileUpdateWithoutHyper_daily_recapInput').implement({
-  fields: hyper_profileUpdateWithoutHyper_daily_recapInputFields,
-});
-
-export const hyper_profileCreateWithoutHyper_mealInputFields = (t: any) => ({
-  name: t.string({"required":true}),
-  image: t.string({"required":false}),
-  email: t.string({"required":false}),
-  last_synced_time: t.field({"required":false,"type":DateTime}),
-  diabetes_status: t.field({"required":false,"type":diabetes_status}),
-  glucose_range_type: t.field({"required":false,"type":glucose_range_type}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityCreateNestedManyWithoutHyper_profileInput}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataCreateNestedManyWithoutHyper_profileInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapCreateNestedManyWithoutHyper_profileInput}),
-  users: t.field({"required":true,"type":usersCreateNestedOneWithoutHyper_profileInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportCreateNestedManyWithoutHyper_profileInput}),
-});
-export const hyper_profileCreateWithoutHyper_mealInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateWithoutHyper_mealInput>, false>('hyper_profileCreateWithoutHyper_mealInput').implement({
-  fields: hyper_profileCreateWithoutHyper_mealInputFields,
-});
-
-export const hyper_profileCreateOrConnectWithoutHyper_mealInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_profileWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_mealInput}),
-});
-export const hyper_profileCreateOrConnectWithoutHyper_mealInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateOrConnectWithoutHyper_mealInput>, false>('hyper_profileCreateOrConnectWithoutHyper_mealInput').implement({
-  fields: hyper_profileCreateOrConnectWithoutHyper_mealInputFields,
-});
-
-export const hyper_profileUpsertWithoutHyper_mealInputFields = (t: any) => ({
-  update: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_mealInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_mealInput}),
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-});
-export const hyper_profileUpsertWithoutHyper_mealInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpsertWithoutHyper_mealInput>, false>('hyper_profileUpsertWithoutHyper_mealInput').implement({
-  fields: hyper_profileUpsertWithoutHyper_mealInputFields,
-});
-
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_mealInputFields = (t: any) => ({
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-  data: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_mealInput}),
-});
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_mealInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateToOneWithWhereWithoutHyper_mealInput>, false>('hyper_profileUpdateToOneWithWhereWithoutHyper_mealInput').implement({
-  fields: hyper_profileUpdateToOneWithWhereWithoutHyper_mealInputFields,
-});
-
-export const hyper_profileUpdateWithoutHyper_mealInputFields = (t: any) => ({
-  name: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  image: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  email: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  last_synced_time: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  diabetes_status: t.field({"required":false,"type":Enumdiabetes_statusFieldUpdateOperationsInput}),
-  glucose_range_type: t.field({"required":false,"type":Enumglucose_range_typeFieldUpdateOperationsInput}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapUpdateManyWithoutHyper_profileNestedInput}),
-  users: t.field({"required":false,"type":usersUpdateOneRequiredWithoutHyper_profileNestedInput}),
-  hyper_report: t.field({"required":false,"type":hyper_reportUpdateManyWithoutHyper_profileNestedInput}),
-});
-export const hyper_profileUpdateWithoutHyper_mealInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateWithoutHyper_mealInput>, false>('hyper_profileUpdateWithoutHyper_mealInput').implement({
-  fields: hyper_profileUpdateWithoutHyper_mealInputFields,
-});
-
-export const hyper_cgm_dataCreateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  dexcom_user_id: t.string({"required":true}),
-  record_id: t.string({"required":true}),
-  system_time: t.field({"required":true,"type":DateTime}),
-  display_time: t.field({"required":true,"type":DateTime}),
-  glucose_value: t.int({"required":false}),
-  trend: t.string({"required":false}),
-  trend_rate: t.float({"required":false}),
-  transmitter_id: t.string({"required":false}),
-  transmitter_generation: t.string({"required":true}),
-  display_device: t.string({"required":true}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-  transmitter_ticks: t.int({"required":true}),
-  status: t.string({"required":false}),
-  unit: t.string({"required":true}),
-  rate_unit: t.string({"required":true}),
-});
-export const hyper_cgm_dataCreateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataCreateWithoutHyper_profileInput>, false>('hyper_cgm_dataCreateWithoutHyper_profileInput').implement({
-  fields: hyper_cgm_dataCreateWithoutHyper_profileInputFields,
-});
-
-export const hyper_cgm_dataCreateOrConnectWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_cgm_dataWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_cgm_dataCreateWithoutHyper_profileInput}),
-});
-export const hyper_cgm_dataCreateOrConnectWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataCreateOrConnectWithoutHyper_profileInput>, false>('hyper_cgm_dataCreateOrConnectWithoutHyper_profileInput').implement({
-  fields: hyper_cgm_dataCreateOrConnectWithoutHyper_profileInputFields,
-});
-
-export const hyper_cgm_dataCreateManyHyper_profileInputEnvelopeFields = (t: any) => ({
-  data: t.field({"required":true,"type":[hyper_cgm_dataCreateManyHyper_profileInput]}),
-  skipDuplicates: t.boolean({"required":false}),
-});
-export const hyper_cgm_dataCreateManyHyper_profileInputEnvelope = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataCreateManyHyper_profileInputEnvelope>, false>('hyper_cgm_dataCreateManyHyper_profileInputEnvelope').implement({
-  fields: hyper_cgm_dataCreateManyHyper_profileInputEnvelopeFields,
-});
-
-export const hyper_daily_recapCreateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  date: t.field({"required":true,"type":DateTime}),
-  average_glucose: t.int({"required":false}),
-  minimum_glucose: t.int({"required":false}),
-  maximum_glucose: t.int({"required":false}),
-  glucose_variability: t.field({"required":false,"type":Decimal}),
-  time_in_ranges: t.field({"required":false,"type":Json}),
-  total_readings: t.int({"required":false}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-  timezone: t.string({"required":true}),
-});
-export const hyper_daily_recapCreateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapCreateWithoutHyper_profileInput>, false>('hyper_daily_recapCreateWithoutHyper_profileInput').implement({
-  fields: hyper_daily_recapCreateWithoutHyper_profileInputFields,
-});
-
-export const hyper_daily_recapCreateOrConnectWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_daily_recapWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_daily_recapCreateWithoutHyper_profileInput}),
-});
-export const hyper_daily_recapCreateOrConnectWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapCreateOrConnectWithoutHyper_profileInput>, false>('hyper_daily_recapCreateOrConnectWithoutHyper_profileInput').implement({
-  fields: hyper_daily_recapCreateOrConnectWithoutHyper_profileInputFields,
-});
-
-export const hyper_daily_recapCreateManyHyper_profileInputEnvelopeFields = (t: any) => ({
-  data: t.field({"required":true,"type":[hyper_daily_recapCreateManyHyper_profileInput]}),
-  skipDuplicates: t.boolean({"required":false}),
-});
-export const hyper_daily_recapCreateManyHyper_profileInputEnvelope = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapCreateManyHyper_profileInputEnvelope>, false>('hyper_daily_recapCreateManyHyper_profileInputEnvelope').implement({
-  fields: hyper_daily_recapCreateManyHyper_profileInputEnvelopeFields,
-});
-
-export const hyper_mealCreateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  meal_time: t.field({"required":false,"type":DateTime}),
-  carbohydrates: t.float({"required":false}),
-  dietary_energy: t.float({"required":false}),
-  dietary_sugar: t.float({"required":false}),
-  fiber: t.float({"required":false}),
-  protein: t.float({"required":false}),
-  total_fat: t.float({"required":false}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-});
-export const hyper_mealCreateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealCreateWithoutHyper_profileInput>, false>('hyper_mealCreateWithoutHyper_profileInput').implement({
-  fields: hyper_mealCreateWithoutHyper_profileInputFields,
-});
-
-export const hyper_mealCreateOrConnectWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_mealWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_mealCreateWithoutHyper_profileInput}),
-});
-export const hyper_mealCreateOrConnectWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealCreateOrConnectWithoutHyper_profileInput>, false>('hyper_mealCreateOrConnectWithoutHyper_profileInput').implement({
-  fields: hyper_mealCreateOrConnectWithoutHyper_profileInputFields,
-});
-
-export const hyper_mealCreateManyHyper_profileInputEnvelopeFields = (t: any) => ({
-  data: t.field({"required":true,"type":[hyper_mealCreateManyHyper_profileInput]}),
-  skipDuplicates: t.boolean({"required":false}),
-});
-export const hyper_mealCreateManyHyper_profileInputEnvelope = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealCreateManyHyper_profileInputEnvelope>, false>('hyper_mealCreateManyHyper_profileInputEnvelope').implement({
-  fields: hyper_mealCreateManyHyper_profileInputEnvelopeFields,
-});
-
-export const usersCreateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.string({"required":true}),
-});
-export const usersCreateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersCreateWithoutHyper_profileInput>, false>('usersCreateWithoutHyper_profileInput').implement({
-  fields: usersCreateWithoutHyper_profileInputFields,
-});
-
-export const usersCreateOrConnectWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":usersWhereUniqueInput}),
-  create: t.field({"required":true,"type":usersCreateWithoutHyper_profileInput}),
-});
-export const usersCreateOrConnectWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersCreateOrConnectWithoutHyper_profileInput>, false>('usersCreateOrConnectWithoutHyper_profileInput').implement({
-  fields: usersCreateOrConnectWithoutHyper_profileInputFields,
-});
-
-export const hyper_reportCreateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  title: t.string({"required":true}),
-  content: t.string({"required":false}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-});
-export const hyper_reportCreateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportCreateWithoutHyper_profileInput>, false>('hyper_reportCreateWithoutHyper_profileInput').implement({
-  fields: hyper_reportCreateWithoutHyper_profileInputFields,
-});
-
-export const hyper_reportCreateOrConnectWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_reportWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_reportCreateWithoutHyper_profileInput}),
-});
-export const hyper_reportCreateOrConnectWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportCreateOrConnectWithoutHyper_profileInput>, false>('hyper_reportCreateOrConnectWithoutHyper_profileInput').implement({
-  fields: hyper_reportCreateOrConnectWithoutHyper_profileInputFields,
-});
-
-export const hyper_reportCreateManyHyper_profileInputEnvelopeFields = (t: any) => ({
-  data: t.field({"required":true,"type":[hyper_reportCreateManyHyper_profileInput]}),
-  skipDuplicates: t.boolean({"required":false}),
-});
-export const hyper_reportCreateManyHyper_profileInputEnvelope = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportCreateManyHyper_profileInputEnvelope>, false>('hyper_reportCreateManyHyper_profileInputEnvelope').implement({
-  fields: hyper_reportCreateManyHyper_profileInputEnvelopeFields,
-});
-
-export const hyper_activityUpdateWithWhereUniqueWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_activityWhereUniqueInput}),
-  data: t.field({"required":true,"type":hyper_activityUpdateWithoutHyper_profileInput}),
-});
-export const hyper_activityUpdateWithWhereUniqueWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUpdateWithWhereUniqueWithoutHyper_profileInput>, false>('hyper_activityUpdateWithWhereUniqueWithoutHyper_profileInput').implement({
-  fields: hyper_activityUpdateWithWhereUniqueWithoutHyper_profileInputFields,
-});
-
-export const hyper_activityUpdateManyWithWhereWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_activityScalarWhereInput}),
-  data: t.field({"required":true,"type":hyper_activityUpdateManyMutationInput}),
-});
-export const hyper_activityUpdateManyWithWhereWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUpdateManyWithWhereWithoutHyper_profileInput>, false>('hyper_activityUpdateManyWithWhereWithoutHyper_profileInput').implement({
-  fields: hyper_activityUpdateManyWithWhereWithoutHyper_profileInputFields,
-});
-
-export const hyper_cgm_dataUpsertWithWhereUniqueWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_cgm_dataWhereUniqueInput}),
-  update: t.field({"required":true,"type":hyper_cgm_dataUpdateWithoutHyper_profileInput}),
-  create: t.field({"required":true,"type":hyper_cgm_dataCreateWithoutHyper_profileInput}),
-});
-export const hyper_cgm_dataUpsertWithWhereUniqueWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataUpsertWithWhereUniqueWithoutHyper_profileInput>, false>('hyper_cgm_dataUpsertWithWhereUniqueWithoutHyper_profileInput').implement({
-  fields: hyper_cgm_dataUpsertWithWhereUniqueWithoutHyper_profileInputFields,
-});
-
-export const hyper_cgm_dataUpdateWithWhereUniqueWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_cgm_dataWhereUniqueInput}),
-  data: t.field({"required":true,"type":hyper_cgm_dataUpdateWithoutHyper_profileInput}),
-});
-export const hyper_cgm_dataUpdateWithWhereUniqueWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataUpdateWithWhereUniqueWithoutHyper_profileInput>, false>('hyper_cgm_dataUpdateWithWhereUniqueWithoutHyper_profileInput').implement({
-  fields: hyper_cgm_dataUpdateWithWhereUniqueWithoutHyper_profileInputFields,
-});
-
-export const hyper_cgm_dataUpdateManyWithWhereWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_cgm_dataScalarWhereInput}),
-  data: t.field({"required":true,"type":hyper_cgm_dataUpdateManyMutationInput}),
-});
-export const hyper_cgm_dataUpdateManyWithWhereWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataUpdateManyWithWhereWithoutHyper_profileInput>, false>('hyper_cgm_dataUpdateManyWithWhereWithoutHyper_profileInput').implement({
-  fields: hyper_cgm_dataUpdateManyWithWhereWithoutHyper_profileInputFields,
-});
-
-export const hyper_cgm_dataScalarWhereInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_cgm_dataScalarWhereInput]}),
-  OR: t.field({"required":false,"type":[hyper_cgm_dataScalarWhereInput]}),
-  NOT: t.field({"required":false,"type":[hyper_cgm_dataScalarWhereInput]}),
-  id: t.field({"required":false,"type":UuidFilter}),
-  dexcom_user_id: t.field({"required":false,"type":StringFilter}),
-  record_id: t.field({"required":false,"type":StringFilter}),
-  system_time: t.field({"required":false,"type":DateTimeFilter}),
-  display_time: t.field({"required":false,"type":DateTimeFilter}),
-  glucose_value: t.field({"required":false,"type":IntNullableFilter}),
-  trend: t.field({"required":false,"type":StringNullableFilter}),
-  trend_rate: t.field({"required":false,"type":FloatNullableFilter}),
-  transmitter_id: t.field({"required":false,"type":StringNullableFilter}),
-  transmitter_generation: t.field({"required":false,"type":StringFilter}),
-  display_device: t.field({"required":false,"type":StringFilter}),
-  profile_id: t.field({"required":false,"type":UuidFilter}),
-  created_at: t.field({"required":false,"type":DateTimeFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableFilter}),
-  transmitter_ticks: t.field({"required":false,"type":IntFilter}),
-  status: t.field({"required":false,"type":StringNullableFilter}),
-  unit: t.field({"required":false,"type":StringFilter}),
-  rate_unit: t.field({"required":false,"type":StringFilter}),
-});
-export const hyper_cgm_dataScalarWhereInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataScalarWhereInput>, false>('hyper_cgm_dataScalarWhereInput').implement({
-  fields: hyper_cgm_dataScalarWhereInputFields,
-});
-
-export const hyper_daily_recapUpsertWithWhereUniqueWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_daily_recapWhereUniqueInput}),
-  update: t.field({"required":true,"type":hyper_daily_recapUpdateWithoutHyper_profileInput}),
-  create: t.field({"required":true,"type":hyper_daily_recapCreateWithoutHyper_profileInput}),
-});
-export const hyper_daily_recapUpsertWithWhereUniqueWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapUpsertWithWhereUniqueWithoutHyper_profileInput>, false>('hyper_daily_recapUpsertWithWhereUniqueWithoutHyper_profileInput').implement({
-  fields: hyper_daily_recapUpsertWithWhereUniqueWithoutHyper_profileInputFields,
-});
-
-export const hyper_daily_recapUpdateWithWhereUniqueWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_daily_recapWhereUniqueInput}),
-  data: t.field({"required":true,"type":hyper_daily_recapUpdateWithoutHyper_profileInput}),
-});
-export const hyper_daily_recapUpdateWithWhereUniqueWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapUpdateWithWhereUniqueWithoutHyper_profileInput>, false>('hyper_daily_recapUpdateWithWhereUniqueWithoutHyper_profileInput').implement({
-  fields: hyper_daily_recapUpdateWithWhereUniqueWithoutHyper_profileInputFields,
-});
-
-export const hyper_daily_recapUpdateManyWithWhereWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_daily_recapScalarWhereInput}),
-  data: t.field({"required":true,"type":hyper_daily_recapUpdateManyMutationInput}),
-});
-export const hyper_daily_recapUpdateManyWithWhereWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapUpdateManyWithWhereWithoutHyper_profileInput>, false>('hyper_daily_recapUpdateManyWithWhereWithoutHyper_profileInput').implement({
-  fields: hyper_daily_recapUpdateManyWithWhereWithoutHyper_profileInputFields,
-});
-
-export const hyper_daily_recapScalarWhereInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_daily_recapScalarWhereInput]}),
-  OR: t.field({"required":false,"type":[hyper_daily_recapScalarWhereInput]}),
-  NOT: t.field({"required":false,"type":[hyper_daily_recapScalarWhereInput]}),
-  id: t.field({"required":false,"type":UuidFilter}),
-  date: t.field({"required":false,"type":DateTimeFilter}),
-  average_glucose: t.field({"required":false,"type":IntNullableFilter}),
-  minimum_glucose: t.field({"required":false,"type":IntNullableFilter}),
-  maximum_glucose: t.field({"required":false,"type":IntNullableFilter}),
-  glucose_variability: t.field({"required":false,"type":DecimalNullableFilter}),
-  time_in_ranges: t.field({"required":false,"type":JsonNullableFilter}),
-  total_readings: t.field({"required":false,"type":IntNullableFilter}),
-  profile_id: t.field({"required":false,"type":UuidFilter}),
-  created_at: t.field({"required":false,"type":DateTimeFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableFilter}),
-  timezone: t.field({"required":false,"type":StringFilter}),
-});
-export const hyper_daily_recapScalarWhereInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapScalarWhereInput>, false>('hyper_daily_recapScalarWhereInput').implement({
-  fields: hyper_daily_recapScalarWhereInputFields,
-});
-
-export const hyper_mealUpsertWithWhereUniqueWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_mealWhereUniqueInput}),
-  update: t.field({"required":true,"type":hyper_mealUpdateWithoutHyper_profileInput}),
-  create: t.field({"required":true,"type":hyper_mealCreateWithoutHyper_profileInput}),
-});
-export const hyper_mealUpsertWithWhereUniqueWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealUpsertWithWhereUniqueWithoutHyper_profileInput>, false>('hyper_mealUpsertWithWhereUniqueWithoutHyper_profileInput').implement({
-  fields: hyper_mealUpsertWithWhereUniqueWithoutHyper_profileInputFields,
-});
-
-export const hyper_mealUpdateWithWhereUniqueWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_mealWhereUniqueInput}),
-  data: t.field({"required":true,"type":hyper_mealUpdateWithoutHyper_profileInput}),
-});
-export const hyper_mealUpdateWithWhereUniqueWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealUpdateWithWhereUniqueWithoutHyper_profileInput>, false>('hyper_mealUpdateWithWhereUniqueWithoutHyper_profileInput').implement({
-  fields: hyper_mealUpdateWithWhereUniqueWithoutHyper_profileInputFields,
-});
-
-export const hyper_mealUpdateManyWithWhereWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_mealScalarWhereInput}),
-  data: t.field({"required":true,"type":hyper_mealUpdateManyMutationInput}),
-});
-export const hyper_mealUpdateManyWithWhereWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealUpdateManyWithWhereWithoutHyper_profileInput>, false>('hyper_mealUpdateManyWithWhereWithoutHyper_profileInput').implement({
-  fields: hyper_mealUpdateManyWithWhereWithoutHyper_profileInputFields,
-});
-
-export const hyper_mealScalarWhereInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_mealScalarWhereInput]}),
-  OR: t.field({"required":false,"type":[hyper_mealScalarWhereInput]}),
-  NOT: t.field({"required":false,"type":[hyper_mealScalarWhereInput]}),
-  id: t.field({"required":false,"type":UuidFilter}),
-  meal_time: t.field({"required":false,"type":DateTimeFilter}),
-  carbohydrates: t.field({"required":false,"type":FloatNullableFilter}),
-  dietary_energy: t.field({"required":false,"type":FloatNullableFilter}),
-  dietary_sugar: t.field({"required":false,"type":FloatNullableFilter}),
-  fiber: t.field({"required":false,"type":FloatNullableFilter}),
-  protein: t.field({"required":false,"type":FloatNullableFilter}),
-  total_fat: t.field({"required":false,"type":FloatNullableFilter}),
-  profile_id: t.field({"required":false,"type":UuidFilter}),
-  created_at: t.field({"required":false,"type":DateTimeFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableFilter}),
-});
-export const hyper_mealScalarWhereInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealScalarWhereInput>, false>('hyper_mealScalarWhereInput').implement({
-  fields: hyper_mealScalarWhereInputFields,
-});
-
-export const usersUpsertWithoutHyper_profileInputFields = (t: any) => ({
-  update: t.field({"required":true,"type":usersUpdateWithoutHyper_profileInput}),
-  create: t.field({"required":true,"type":usersCreateWithoutHyper_profileInput}),
-  where: t.field({"required":false,"type":usersWhereInput}),
-});
-export const usersUpsertWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersUpsertWithoutHyper_profileInput>, false>('usersUpsertWithoutHyper_profileInput').implement({
-  fields: usersUpsertWithoutHyper_profileInputFields,
-});
-
-export const usersUpdateToOneWithWhereWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":false,"type":usersWhereInput}),
-  data: t.field({"required":true,"type":usersUpdateWithoutHyper_profileInput}),
-});
-export const usersUpdateToOneWithWhereWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersUpdateToOneWithWhereWithoutHyper_profileInput>, false>('usersUpdateToOneWithWhereWithoutHyper_profileInput').implement({
-  fields: usersUpdateToOneWithWhereWithoutHyper_profileInputFields,
-});
-
-export const usersUpdateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-});
-export const usersUpdateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.usersUpdateWithoutHyper_profileInput>, false>('usersUpdateWithoutHyper_profileInput').implement({
-  fields: usersUpdateWithoutHyper_profileInputFields,
-});
-
-export const hyper_reportUpsertWithWhereUniqueWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_reportWhereUniqueInput}),
-  update: t.field({"required":true,"type":hyper_reportUpdateWithoutHyper_profileInput}),
-  create: t.field({"required":true,"type":hyper_reportCreateWithoutHyper_profileInput}),
-});
-export const hyper_reportUpsertWithWhereUniqueWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportUpsertWithWhereUniqueWithoutHyper_profileInput>, false>('hyper_reportUpsertWithWhereUniqueWithoutHyper_profileInput').implement({
-  fields: hyper_reportUpsertWithWhereUniqueWithoutHyper_profileInputFields,
-});
-
-export const hyper_reportUpdateWithWhereUniqueWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_reportWhereUniqueInput}),
-  data: t.field({"required":true,"type":hyper_reportUpdateWithoutHyper_profileInput}),
-});
-export const hyper_reportUpdateWithWhereUniqueWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportUpdateWithWhereUniqueWithoutHyper_profileInput>, false>('hyper_reportUpdateWithWhereUniqueWithoutHyper_profileInput').implement({
-  fields: hyper_reportUpdateWithWhereUniqueWithoutHyper_profileInputFields,
-});
-
-export const hyper_reportUpdateManyWithWhereWithoutHyper_profileInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_reportScalarWhereInput}),
-  data: t.field({"required":true,"type":hyper_reportUpdateManyMutationInput}),
-});
-export const hyper_reportUpdateManyWithWhereWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportUpdateManyWithWhereWithoutHyper_profileInput>, false>('hyper_reportUpdateManyWithWhereWithoutHyper_profileInput').implement({
-  fields: hyper_reportUpdateManyWithWhereWithoutHyper_profileInputFields,
-});
-
-export const hyper_reportScalarWhereInputFields = (t: any) => ({
-  AND: t.field({"required":false,"type":[hyper_reportScalarWhereInput]}),
-  OR: t.field({"required":false,"type":[hyper_reportScalarWhereInput]}),
-  NOT: t.field({"required":false,"type":[hyper_reportScalarWhereInput]}),
-  id: t.field({"required":false,"type":UuidFilter}),
-  title: t.field({"required":false,"type":StringFilter}),
-  content: t.field({"required":false,"type":StringNullableFilter}),
-  profile_id: t.field({"required":false,"type":UuidFilter}),
-  created_at: t.field({"required":false,"type":DateTimeFilter}),
-  updatedAt: t.field({"required":false,"type":DateTimeNullableFilter}),
-});
-export const hyper_reportScalarWhereInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportScalarWhereInput>, false>('hyper_reportScalarWhereInput').implement({
-  fields: hyper_reportScalarWhereInputFields,
-});
-
-export const hyper_profileCreateWithoutHyper_reportInputFields = (t: any) => ({
-  name: t.string({"required":true}),
-  image: t.string({"required":false}),
-  email: t.string({"required":false}),
-  last_synced_time: t.field({"required":false,"type":DateTime}),
-  diabetes_status: t.field({"required":false,"type":diabetes_status}),
-  glucose_range_type: t.field({"required":false,"type":glucose_range_type}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityCreateNestedManyWithoutHyper_profileInput}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataCreateNestedManyWithoutHyper_profileInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapCreateNestedManyWithoutHyper_profileInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealCreateNestedManyWithoutHyper_profileInput}),
-  users: t.field({"required":true,"type":usersCreateNestedOneWithoutHyper_profileInput}),
-});
-export const hyper_profileCreateWithoutHyper_reportInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateWithoutHyper_reportInput>, false>('hyper_profileCreateWithoutHyper_reportInput').implement({
-  fields: hyper_profileCreateWithoutHyper_reportInputFields,
-});
-
-export const hyper_profileCreateOrConnectWithoutHyper_reportInputFields = (t: any) => ({
-  where: t.field({"required":true,"type":hyper_profileWhereUniqueInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_reportInput}),
-});
-export const hyper_profileCreateOrConnectWithoutHyper_reportInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileCreateOrConnectWithoutHyper_reportInput>, false>('hyper_profileCreateOrConnectWithoutHyper_reportInput').implement({
-  fields: hyper_profileCreateOrConnectWithoutHyper_reportInputFields,
-});
-
-export const hyper_profileUpsertWithoutHyper_reportInputFields = (t: any) => ({
-  update: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_reportInput}),
-  create: t.field({"required":true,"type":hyper_profileCreateWithoutHyper_reportInput}),
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-});
-export const hyper_profileUpsertWithoutHyper_reportInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpsertWithoutHyper_reportInput>, false>('hyper_profileUpsertWithoutHyper_reportInput').implement({
-  fields: hyper_profileUpsertWithoutHyper_reportInputFields,
-});
-
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_reportInputFields = (t: any) => ({
-  where: t.field({"required":false,"type":hyper_profileWhereInput}),
-  data: t.field({"required":true,"type":hyper_profileUpdateWithoutHyper_reportInput}),
-});
-export const hyper_profileUpdateToOneWithWhereWithoutHyper_reportInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateToOneWithWhereWithoutHyper_reportInput>, false>('hyper_profileUpdateToOneWithWhereWithoutHyper_reportInput').implement({
-  fields: hyper_profileUpdateToOneWithWhereWithoutHyper_reportInputFields,
-});
-
-export const hyper_profileUpdateWithoutHyper_reportInputFields = (t: any) => ({
-  name: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  image: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  email: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  last_synced_time: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  diabetes_status: t.field({"required":false,"type":Enumdiabetes_statusFieldUpdateOperationsInput}),
-  glucose_range_type: t.field({"required":false,"type":Enumglucose_range_typeFieldUpdateOperationsInput}),
-  hyper_activity: t.field({"required":false,"type":hyper_activityUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_cgm_data: t.field({"required":false,"type":hyper_cgm_dataUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_daily_recap: t.field({"required":false,"type":hyper_daily_recapUpdateManyWithoutHyper_profileNestedInput}),
-  hyper_meal: t.field({"required":false,"type":hyper_mealUpdateManyWithoutHyper_profileNestedInput}),
-  users: t.field({"required":false,"type":usersUpdateOneRequiredWithoutHyper_profileNestedInput}),
-});
-export const hyper_profileUpdateWithoutHyper_reportInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_profileUpdateWithoutHyper_reportInput>, false>('hyper_profileUpdateWithoutHyper_reportInput').implement({
-  fields: hyper_profileUpdateWithoutHyper_reportInputFields,
-});
-
-export const hyper_activityUpdateWithoutHyper_activity_typeInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  hyper_profile: t.field({"required":false,"type":hyper_profileUpdateOneRequiredWithoutHyper_activityNestedInput}),
-});
-export const hyper_activityUpdateWithoutHyper_activity_typeInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUpdateWithoutHyper_activity_typeInput>, false>('hyper_activityUpdateWithoutHyper_activity_typeInput').implement({
-  fields: hyper_activityUpdateWithoutHyper_activity_typeInputFields,
-});
-
-export const hyper_cgm_dataCreateManyHyper_profileInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  dexcom_user_id: t.string({"required":true}),
-  record_id: t.string({"required":true}),
-  system_time: t.field({"required":true,"type":DateTime}),
-  display_time: t.field({"required":true,"type":DateTime}),
-  glucose_value: t.int({"required":false}),
-  trend: t.string({"required":false}),
-  trend_rate: t.float({"required":false}),
-  transmitter_id: t.string({"required":false}),
-  transmitter_generation: t.string({"required":true}),
-  display_device: t.string({"required":true}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-  transmitter_ticks: t.int({"required":true}),
-  status: t.string({"required":false}),
-  unit: t.string({"required":true}),
-  rate_unit: t.string({"required":true}),
-});
-export const hyper_cgm_dataCreateManyHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataCreateManyHyper_profileInput>, false>('hyper_cgm_dataCreateManyHyper_profileInput').implement({
-  fields: hyper_cgm_dataCreateManyHyper_profileInputFields,
-});
-
-export const hyper_daily_recapCreateManyHyper_profileInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  date: t.field({"required":true,"type":DateTime}),
-  average_glucose: t.int({"required":false}),
-  minimum_glucose: t.int({"required":false}),
-  maximum_glucose: t.int({"required":false}),
-  glucose_variability: t.field({"required":false,"type":Decimal}),
-  time_in_ranges: t.field({"required":false,"type":Json}),
-  total_readings: t.int({"required":false}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-  timezone: t.string({"required":true}),
-});
-export const hyper_daily_recapCreateManyHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapCreateManyHyper_profileInput>, false>('hyper_daily_recapCreateManyHyper_profileInput').implement({
-  fields: hyper_daily_recapCreateManyHyper_profileInputFields,
-});
-
-export const hyper_mealCreateManyHyper_profileInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  meal_time: t.field({"required":false,"type":DateTime}),
-  carbohydrates: t.float({"required":false}),
-  dietary_energy: t.float({"required":false}),
-  dietary_sugar: t.float({"required":false}),
-  fiber: t.float({"required":false}),
-  protein: t.float({"required":false}),
-  total_fat: t.float({"required":false}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-});
-export const hyper_mealCreateManyHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealCreateManyHyper_profileInput>, false>('hyper_mealCreateManyHyper_profileInput').implement({
-  fields: hyper_mealCreateManyHyper_profileInputFields,
-});
-
-export const hyper_reportCreateManyHyper_profileInputFields = (t: any) => ({
-  id: t.string({"required":false}),
-  title: t.string({"required":true}),
-  content: t.string({"required":false}),
-  created_at: t.field({"required":false,"type":DateTime}),
-  updatedAt: t.field({"required":false,"type":DateTime}),
-});
-export const hyper_reportCreateManyHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportCreateManyHyper_profileInput>, false>('hyper_reportCreateManyHyper_profileInput').implement({
-  fields: hyper_reportCreateManyHyper_profileInputFields,
-});
-
-export const hyper_activityUpdateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  hyper_activity_type: t.field({"required":false,"type":hyper_activity_typeUpdateOneRequiredWithoutHyper_activityNestedInput}),
-});
-export const hyper_activityUpdateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_activityUpdateWithoutHyper_profileInput>, false>('hyper_activityUpdateWithoutHyper_profileInput').implement({
-  fields: hyper_activityUpdateWithoutHyper_profileInputFields,
-});
-
-export const hyper_cgm_dataUpdateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  dexcom_user_id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  record_id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  system_time: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  display_time: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  glucose_value: t.field({"required":false,"type":NullableIntFieldUpdateOperationsInput}),
-  trend: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  trend_rate: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
-  transmitter_id: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  transmitter_generation: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  display_device: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  transmitter_ticks: t.field({"required":false,"type":IntFieldUpdateOperationsInput}),
-  status: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  unit: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  rate_unit: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-});
-export const hyper_cgm_dataUpdateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_cgm_dataUpdateWithoutHyper_profileInput>, false>('hyper_cgm_dataUpdateWithoutHyper_profileInput').implement({
-  fields: hyper_cgm_dataUpdateWithoutHyper_profileInputFields,
-});
-
-export const hyper_daily_recapUpdateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  date: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  average_glucose: t.field({"required":false,"type":NullableIntFieldUpdateOperationsInput}),
-  minimum_glucose: t.field({"required":false,"type":NullableIntFieldUpdateOperationsInput}),
-  maximum_glucose: t.field({"required":false,"type":NullableIntFieldUpdateOperationsInput}),
-  glucose_variability: t.field({"required":false,"type":NullableDecimalFieldUpdateOperationsInput}),
-  time_in_ranges: t.field({"required":false,"type":Json}),
-  total_readings: t.field({"required":false,"type":NullableIntFieldUpdateOperationsInput}),
-  created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-  timezone: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-});
-export const hyper_daily_recapUpdateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_daily_recapUpdateWithoutHyper_profileInput>, false>('hyper_daily_recapUpdateWithoutHyper_profileInput').implement({
-  fields: hyper_daily_recapUpdateWithoutHyper_profileInputFields,
-});
-
-export const hyper_mealUpdateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  meal_time: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  carbohydrates: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
-  dietary_energy: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
-  dietary_sugar: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
-  fiber: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
-  protein: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
-  total_fat: t.field({"required":false,"type":NullableFloatFieldUpdateOperationsInput}),
-  created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-});
-export const hyper_mealUpdateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_mealUpdateWithoutHyper_profileInput>, false>('hyper_mealUpdateWithoutHyper_profileInput').implement({
-  fields: hyper_mealUpdateWithoutHyper_profileInputFields,
-});
-
-export const hyper_reportUpdateWithoutHyper_profileInputFields = (t: any) => ({
-  id: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  title: t.field({"required":false,"type":StringFieldUpdateOperationsInput}),
-  content: t.field({"required":false,"type":NullableStringFieldUpdateOperationsInput}),
-  created_at: t.field({"required":false,"type":DateTimeFieldUpdateOperationsInput}),
-  updatedAt: t.field({"required":false,"type":NullableDateTimeFieldUpdateOperationsInput}),
-});
-export const hyper_reportUpdateWithoutHyper_profileInput = builder.inputRef<PrismaUpdateOperationsInputFilter<Prisma.hyper_reportUpdateWithoutHyper_profileInput>, false>('hyper_reportUpdateWithoutHyper_profileInput').implement({
-  fields: hyper_reportUpdateWithoutHyper_profileInputFields,
 });

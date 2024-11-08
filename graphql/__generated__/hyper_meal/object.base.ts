@@ -1,5 +1,5 @@
 import * as Inputs from '~/graphql/__generated__/inputs';
-import { builder } from '../../../builder';
+import { builder } from '../../../schema/builder';
 import {
   definePrismaObject,
   defineFieldObject,

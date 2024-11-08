@@ -1,5 +1,6 @@
-import * as Inputs from '~/graphql/__generated__/inputs';import { db } from "~/server/db";
-import { builder } from '../../../../builder';
+import * as Inputs from '~/graphql/__generated__/inputs';
+import { db } from "~/server/db";
+import { builder } from '../../../../schema/builder';
 import { defineMutation, defineMutationFunction, defineMutationPrismaObject } from '../../utils';
 
 export const createOnehyper_cgm_dataMutationArgs = builder.args((t) => ({ data: t.field({ type: Inputs.hyper_cgm_dataCreateInput, required: true }) }))

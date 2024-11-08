@@ -6,7 +6,7 @@ import * as hyper_daily_recap from './hyper_daily_recap';
 import * as hyper_meal from './hyper_meal';
 import * as hyper_profile from './hyper_profile';
 import * as hyper_report from './hyper_report';
-import { builder } from '../../builder';
+import { builder } from '../../schema/builder';
 import * as Objects from './objects';
 
 type Model = Objects.Model;

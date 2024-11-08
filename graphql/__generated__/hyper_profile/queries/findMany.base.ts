@@ -1,5 +1,6 @@
-import * as Inputs from '~/graphql/__generated__/inputs';import { db } from "~/server/db";
-import { builder } from '../../../../builder';
+import * as Inputs from '~/graphql/__generated__/inputs';
+import { db } from "~/server/db";
+import { builder } from '../../../../schema/builder';
 import { defineQuery, defineQueryFunction, defineQueryPrismaObject } from '../../utils';
 
 export const findManyhyper_profileQueryArgs = builder.args((t) => ({

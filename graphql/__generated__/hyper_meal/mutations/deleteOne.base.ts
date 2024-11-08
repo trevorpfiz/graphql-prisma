@@ -1,5 +1,6 @@
-import * as Inputs from '~/graphql/__generated__/inputs';import { db } from "~/server/db";
-import { builder } from '../../../../builder';
+import * as Inputs from '~/graphql/__generated__/inputs';
+import { db } from "~/server/db";
+import { builder } from '../../../../schema/builder';
 import { defineMutation, defineMutationFunction, defineMutationPrismaObject } from '../../utils';
 
 export const deleteOnehyper_mealMutationArgs = builder.args((t) => ({ where: t.field({ type: Inputs.hyper_mealWhereUniqueInput, required: true }) }))

@@ -1,5 +1,6 @@
-import * as Inputs from '~/graphql/__generated__/inputs';import { db } from "~/server/db";
-import { builder } from '../../../../builder';
+import * as Inputs from '~/graphql/__generated__/inputs';
+import { db } from "~/server/db";
+import { builder } from '../../../../schema/builder';
 import { defineMutation, defineMutationFunction, defineMutationPrismaObject } from '../../utils';
 
 export const createManyhyper_daily_recapMutationArgs = builder.args((t) => ({ data: t.field({ type: [Inputs.hyper_daily_recapCreateInput], required: true }) }))

@@ -9,7 +9,9 @@ generator drizzle {
 }
 
 generator pothos {
-  provider = "prisma-pothos-types"
+  provider     = "prisma-pothos-types"
+  clientOutput = ".prisma/client"
+  output       = "../generated/objects.d.ts"
 }
 
 generator pothosCrud {

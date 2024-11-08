@@ -1,6 +1,7 @@
 import * as Inputs from '~/graphql/__generated__/inputs';
-import { BatchPayload } from '../../objects';import { db } from "~/server/db";
-import { builder } from '../../../../builder';
+import { BatchPayload } from '../../objects';
+import { db } from "~/server/db";
+import { builder } from '../../../../schema/builder';
 import { defineMutation, defineMutationFunction, defineMutationObject } from '../../utils';
 
 export const deleteManyusersMutationArgs = builder.args((t) => ({ where: t.field({ type: Inputs.usersWhereInput, required: true }) }))

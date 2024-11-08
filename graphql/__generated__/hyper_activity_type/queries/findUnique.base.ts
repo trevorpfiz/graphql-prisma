@@ -1,5 +1,6 @@
-import * as Inputs from '~/graphql/__generated__/inputs';import { db } from "~/server/db";
-import { builder } from '../../../../builder';
+import * as Inputs from '~/graphql/__generated__/inputs';
+import { db } from "~/server/db";
+import { builder } from '../../../../schema/builder';
 import { defineQuery, defineQueryFunction, defineQueryPrismaObject } from '../../utils';
 
 export const findUniquehyper_activity_typeQueryArgs = builder.args((t) => ({ where: t.field({ type: Inputs.hyper_activity_typeWhereUniqueInput, required: true }) }))
